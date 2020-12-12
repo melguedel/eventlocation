@@ -137,6 +137,20 @@ nav ul a {
     margin-top: 1em;
 }
 
+/* Error & Success Messages */
+
+.redError {
+    color: darkred;
+    padding: 0.5em;
+    font-weight: bold;
+}
+
+.new {
+    color: green;
+    padding: 0.5em;
+    font-weight: bold;
+}
+
 
 /* Footer */
 
