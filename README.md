@@ -8,15 +8,15 @@ The project is about an event location where concerts, different kinds of festiv
 
  > Requirements
 
-° Responsive Layout
-° Database
-° Login Form
-° Register Form
-° Secure Data Transfer
+° Responsive Layout <br>
+° Database <br>
+° Login Form <br>
+° Register Form <br>
+° Secure Data Transfer <br>
 ° Administration Tool, only available trough login
 
  > Optional
 
- ° Guestbook
- ° News
+ ° Guestbook <br>
+ ° News <br>
 
