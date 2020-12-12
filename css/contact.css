@@ -28,7 +28,14 @@
     margin: 2em;
 }
 
+iframe {
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+}
+
 /* Section Form */
+
 
 .address {
     display: flex;
@@ -61,6 +68,12 @@
     .contact {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .subBtn {
+        margin-bottom: 2em;
     }
 
 }
@@ -69,7 +82,16 @@
 
 @media screen and (min-width: 600px) {
 
+    .contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
+    .subBtn {
+        margin-bottom: 2em;
+    }
 
 }
 
@@ -77,6 +99,11 @@
 
 @media screen and (min-width: 980px) {
 
+    .contact {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+    }
 
 }
 
