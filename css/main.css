@@ -126,6 +126,15 @@ nav ul a {
     /* text-align: left; */
   }
 
+  .subBtn {
+    font-family: 'Poppins', sans-serif;
+    border: solid 3px #d49a89;
+    color: #d49a89;
+    padding: 0.5em;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
 
 /* Footer */
 

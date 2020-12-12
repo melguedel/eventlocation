@@ -15,7 +15,7 @@
     
     <!-- Other Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <!-- <link rel="stylesheet" href="css/login.css"> -->
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -34,6 +34,60 @@
     <!-- Navbar -->
 
     <?php include "includes/navbar.html"?>
+
+    <!-- Login or Registration -->
+
+    <section id="loginSection">
+
+            <!-- Registration -->
+
+                <form id="registerForm" method="POST" class="logForm">
+
+                        <h2>Register for updates and goodies!</h2>
+
+                            <!-- Radiobuttons -->
+                            <div class="radiobtn">
+                                <label for="female">Female</label>
+                                <input type="radio" id="female" name="sex" checked>
+
+                                <label for="male">Male</label>
+                                <input type="radio" id="male" name="sex">
+
+                            </div>
+
+                            <!-- Eingabefelder -->
+                            <label for="username">Username</label>
+                            <input type="text" name="username">
+                            <div class="redError"></div>
+
+                            <label for="email">E-Mail</label>
+                            <input type="text" name="email">
+                            <div class="redError"></div>
+
+                            <label for="passWord">Password</label>
+                            <input type="text" name="passWord">
+                            <div class="redError"></div>
+
+                            <!-- Terms and Conditions -->
+                            <label for="agb">Accept terms and conditions
+                            <input type="checkbox" name="agb"></label>
+                            <div class="redError"></div>
+
+                            <!-- Form nicht ausgefüllt -->
+                            <div class="redError"></div>
+
+                            <!-- Form korrekt abgeschickt -->
+                            <div class="new"></div>
+
+                            <!-- Submit -->
+                            <input type="submit" class="subBtn" name="submit" value="Register"></input>
+
+                            <!-- Change to Login Form or Register Form -->
+                            <p class="logMessage">Already registered? <a class="toggleBtn">Sign in</a></p>
+
+                    </form>
+
+                
 
 
 

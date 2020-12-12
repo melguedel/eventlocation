@@ -62,11 +62,15 @@
                 </div>
 
 
-                <form action="" method="POST">
+                <form class="newsletter" action="" method="POST">
+
                     <h6>Sign up for our newsletter!</h6>
 
-                    
-
+                        <label for="mail">Enter E-Mail</label>
+                        <input type="text" name="mail" value=""> 
+                        <div class="redError"></div>
+                        
+                        <input type="submit" class="subBtn" value="Sign me up" name="send">
 
                 </form>
 
