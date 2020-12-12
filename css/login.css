@@ -20,6 +20,10 @@
     width: 80%;
 }
 
+.logForm {
+    display: none;
+}
+
 .regInfo {
     margin-bottom: 1em;
 }
@@ -54,7 +58,7 @@ input:focus {
 
 @media screen and (max-width: 599px) {
 
-    #registerForm h2 {
+    #registerForm h2, .logForm h2 {
         font-size: 1.5rem;
     }
 }
@@ -63,7 +67,7 @@ input:focus {
 
 @media screen and (min-width: 600px) {
 
-    #registerForm h2 {
+    #registerForm h2, .logForm h2 {
         font-size: 2rem;
     }
 }
@@ -72,7 +76,7 @@ input:focus {
 
 @media screen and (min-width: 980px) {
 
-    #registerForm h2 {
+    #registerForm h2, .logForm h2 {
         font-size: 2.5rem;
     }
 }
