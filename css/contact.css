@@ -1,0 +1,36 @@
+/* === Small CSS Reset === */
+*{
+    margin: 0;
+    padding: 0;
+}
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3em;
+    width: 50%;
+}
+
+.map p {
+    margin: 2em;
+}
+
+.address {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    /* margin: 1em; */
+}
+
