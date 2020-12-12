@@ -43,7 +43,8 @@
 
                 <form id="registerForm" method="POST" class="logForm">
 
-                        <h2>Register for updates and goodies!</h2>
+                        <h2>Register</h2>
+                        <p class="regInfo">and get discounts and goodies for upcoming events!</p>
 
                             <!-- Radiobuttons -->
 
@@ -114,6 +115,27 @@
                             <p class="logMessage">Already registered? <a class="toggleBtn">Sign in</a></p>
 
                     </form>
+
+            <!-- Login Form -->
+
+                <form class="logForm" method="POST">
+
+                        <h2>Login</h2>
+                        <p class="regInfo">and continue exploring</p>
+
+                        <label for="userName">Username</label>
+                        <input type="text" name="userName" value=""> 
+                        <div class="redError"></div>
+
+                        <label for="password">Password</label>
+                        <input type="text" name="password" value="">
+                        <div class="redError"></div>
+                        
+                        <button type="submit" class="subBtn">Log in</button>
+
+                        <p class="logMessage">Not registered yet? <a class="toggleBtn">Register here</a></p>
+
+                 </form>
 
     </section>            
 

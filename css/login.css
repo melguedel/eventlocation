@@ -20,6 +20,10 @@
     width: 80%;
 }
 
+.regInfo {
+    margin-bottom: 1em;
+}
+
 input:focus + label {
     color: #d49a89 !important;
   }

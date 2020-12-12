@@ -13,6 +13,14 @@ $('.parallax').parallax();
 // Imageslider
 
 $('.slider').slider();
+
+
+// Login Toggle Button
+
+$('.toggleBtn').click(function (){
+    console.log('toggle');
+    $('.logForm').toggle();
+});
   
   
   
