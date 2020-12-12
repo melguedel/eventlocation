@@ -79,16 +79,13 @@
                             </div>
 
                             <!-- Eingabefelder -->
-                            <label for="username">Username</label>
-                            <input type="text" name="username">
+                            <label for="username">Username<input type="text" name="username"></label>
                             <div class="redError"></div>
 
-                            <label for="email">E-Mail</label>
-                            <input type="text" name="email">
+                            <label for="email">E-Mail<input type="text" name="email"></label>
                             <div class="redError"></div>
 
-                            <label for="passWord">Password</label>
-                            <input type="text" name="passWord">
+                            <label for="passWord">Password<input type="text" name="passWord"></label>
                             <div class="redError"></div>
 
                             <!-- Terms and Conditions -->
@@ -123,15 +120,13 @@
                         <h2>Login</h2>
                         <p class="regInfo">and continue exploring</p>
 
-                        <label for="userName">Username</label>
-                        <input type="text" name="userName" value=""> 
+                        <label for="userName">Username<input type="text" name="userName" value=""> </label>
                         <div class="redError"></div>
 
-                        <label for="password">Password</label>
-                        <input type="text" name="password" value="">
+                        <label for="password">Password<input type="text" name="password" value=""></label>
                         <div class="redError"></div>
                         
-                        <button type="submit" class="subBtn">Log in</button>
+                        <input type="submit" class="subBtn" value="Log me in"></input>
 
                         <p class="logMessage">Not registered yet? <a class="toggleBtn">Register here</a></p>
 
