@@ -34,7 +34,37 @@
 
     <?php include "includes/navbar.html"?>
 
+    <!-- Guestbook Login -->
 
+    <!-- Login Form -->
+
+    <form class="logForm" method="POST">
+
+        <h2>Share your thoughts!</h2>
+        <p class="regInfo">You must be logged in to comment</p>
+
+        <label for="userName">Username<input type="text" name="userName" value=""> </label>
+        <div class="redError"></div>
+
+        <label for="password">Password<input type="text" name="password" value=""></label>
+        <div class="redError"></div>
+
+        <div class="row">
+            <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Textarea</label>
+                </div>
+            </div>
+            </form>
+        </div>
+        <div class="redError"></div>
+
+        <input type="submit" class="subBtn" value="Share your comment"></input>
+
+
+</form>
     
 
     <!-- Footer -->
