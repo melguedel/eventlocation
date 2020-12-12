@@ -36,7 +36,6 @@
     align-items: center;
     flex-direction: column;
     width: 50%;
-    /* margin: 1em; */
 }
 
 .newsletter {
@@ -50,5 +49,34 @@
     padding: 0.5em;
     cursor: pointer;
     margin-top: 1em;
+}
+
+
+/* Media Queries */
+
+/* Phones */
+
+@media screen and (max-width: 599px) {
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+/* Tablets */
+
+@media screen and (min-width: 600px) {
+
+
+
+}
+
+/* Desktop */
+
+@media screen and (min-width: 980px) {
+
+
 }
 

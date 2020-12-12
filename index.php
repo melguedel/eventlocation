@@ -90,31 +90,31 @@
     <div class="slider">
     <ul class="slides">
       <li>
-        <img src="images/conference.jpg">
+        <img src="images/conference.jpg" alt="big hall room">
         <div class="caption center-align">
-          <h4>Big Hall</h3>
-          <h5 class="light grey-text text-lighten-3">Party with up to 400 people!</h5>
+          <h3>Big Hall</h3>
+          <h4 class="light grey-text text-lighten-3">Party with up to 400 people!</h5>
         </div>
       </li>
       <li>
-        <img src="images/banquet.jpg">
+        <img src="images/banquet.jpg" alt="decorated lunch tables">
         <div class="caption left-align">
-          <h4>Team Meetings</h3>
-          <h5 class="light grey-text text-lighten-3">Optional meals can be booked for meetings</h5>
+          <h3>Team Meetings</h3>
+          <h4 class="light grey-text text-lighten-3">Optional meals can be booked for meetings</h5>
         </div>
       </li>
       <li>
-        <img src="images/weddingparty.jpg">
+        <img src="images/weddingparty.jpg" alt="crowd cheering for wedding couple">
         <div class="caption right-align">
-          <h4>Your Special Day</h3>
-          <h5 class="light grey-text text-lighten-3">Rent our location for beautiful weddings</h5>
+          <h3>Your Special Day</h3>
+          <h4 class="light grey-text text-lighten-3">Rent our location for beautiful weddings</h5>
         </div>
       </li>
       <li>
-        <img src="images/club.jpg">
+        <img src="images/club.jpg" alt="clubbing">
         <div class="caption center-align">
-          <h4>Concerts</h3>
-          <h5 class="light grey-text text-lighten-3">See your favorite artists!</h5>
+          <h3>Concerts</h3>
+          <h4 class="light grey-text text-lighten-3">See your favorite artists!</h5>
         </div>
       </li>
     </ul>
