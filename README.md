@@ -1,22 +1,22 @@
 CONTENTS OF THIS FILE
 ---------------------
 
- * Introduction
+> Introduction
  
 Project custom made Content Management System January 2021.
 The project is about an event location where concerts, different kinds of festivals and other parties are held. The location is also available for private parties like weddings.
 
- * Requirements
+ > Requirements
 
-> Responsive Layout
-> Database
-> Login Form
-> Register Form
-> Secure Data Transfer
-> Administration Tool, only available trough login
+° Responsive Layout
+° Database
+° Login Form
+° Register Form
+° Secure Data Transfer
+° Administration Tool, only available trough login
 
- * Optional
+ > Optional
 
- > Guestbook
- > News
+ ° Guestbook
+ ° News
 
