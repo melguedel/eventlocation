@@ -7,8 +7,68 @@
     box-sizing: border-box;
 }
 
-.toggleBtn a {
+/* Login Section */
+
+#loginSection {
+    margin: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#registerForm {
+    width: 80%;
+}
+
+input:focus + label {
+    color: #d49a89 !important;
+  }
+
+input:focus {
+    border-bottom: 2px solid #d49a89 !important;
+    box-shadow: 0 1px 0 0 #d49a89 !important
+  }
+
+.radiobtn {
+    margin-bottom: 1em;
+}
+
+.toggleBtn {
     color: #d49a89;
     font-weight: bold;
     cursor: pointer;
+}
+
+.logMessage {
+    margin-top: 1em;
+}
+
+
+/* Media Queries */
+
+/* Phones */
+
+@media screen and (max-width: 599px) {
+
+    #registerForm h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Tablets */
+
+@media screen and (min-width: 600px) {
+
+    #registerForm h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Desktop */
+
+@media screen and (min-width: 980px) {
+
+    #registerForm h2 {
+        font-size: 2.5rem;
+    }
 }

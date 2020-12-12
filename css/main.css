@@ -78,11 +78,11 @@ nav ul a {
 #pic:after {
     color:#fff;
     text-align: center;
-    padding-top: 6em;
     position:absolute;
     width:100%; 
     height: 100%;
-    top:0; left:0;
+    top:0; 
+    left:0;
     background:rgba(0,0,0,0.6);
     opacity:0;
     transition: all 0.5s;
@@ -142,7 +142,6 @@ nav ul a {
 
 footer {
     position: absolute;
-    /* bottom: 0; */
     padding: 1em;
     width: 100%;
 }
@@ -198,38 +197,64 @@ footer {
 
 @media screen and (max-width: 599px) {
 
-    .footerInfo {
+    .boxes {
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
     }
 
-    .privacyPolicy {
-        font-size: 0.8rem;
+    #pic {
+        width: 100%;
     }
 
-    .socialMedia a {
-        font-size: 1.2rem;
+    h1, h2, h3, h4 {
+        font-size: 1.5rem;
     }
 
-    .to-top-btn {
+    .concert:after{
         font-size: 2rem;
+        padding-top: 1.5em;
     }
+    
+    .wedding:after{
+        font-size: 2rem;
+        padding-top: 1.5em;
+    }
+    
+    .festivals:after{
+        font-size: 2rem;
+        padding-top: 1.5em;
+    }
+
 }
 
 /* Tablets */
 
 @media screen and (min-width: 600px) {
 
-
-    .socialMedia a {
-        font-size: 1.5rem;
+    .boxes {
+        display: flex;
+        flex-direction: column;
     }
 
-    .to-top-btn {
+    #pic {
+        width: 60%;
+    }
+
+    .concert:after{
         font-size: 2rem;
+        padding-top: 4em;
     }
+    
+    .wedding:after{
+        font-size: 2rem;
+        padding-top: 4em;
+    }
+    
+    .festivals:after{
+        font-size: 2rem;
+        padding-top: 4em;
+    }
+
 
 }
 
@@ -237,16 +262,28 @@ footer {
 
 @media screen and (min-width: 980px) {
 
-
-    .subBtn {
-        font-size: 1rem;
+    .boxes {
+        display: flex;
+        flex-direction: row;
     }
 
-    .socialMedia a {
+    #pic {
+        width: 30%;
+    }
+
+    .concert:after{
         font-size: 1.5rem;
+        padding-top: 5em;
+    }
+    
+    .wedding:after{
+        font-size: 1.5rem;
+        padding-top: 5em;
+    }
+    
+    .festivals:after{
+        font-size: 1.5rem;
+        padding-top: 5em;
     }
 
-    .to-top-btn {
-        font-size: 2.5rem;
-    }
 }

@@ -15,7 +15,7 @@
     
     <!-- Other Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
-    <!-- <link rel="stylesheet" href="css/login.css"> -->
+    <link rel="stylesheet" href="css/login.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -46,12 +46,34 @@
                         <h2>Register for updates and goodies!</h2>
 
                             <!-- Radiobuttons -->
-                            <div class="radiobtn">
-                                <label for="female">Female</label>
-                                <input type="radio" id="female" name="sex" checked>
 
-                                <label for="male">Male</label>
-                                <input type="radio" id="male" name="sex">
+                            <div class="radiobtn">
+                                
+                            <!-- Radiobutton Female -->
+                                <p>
+                                    <label>
+                                    <input class="with-gap" name="group3" type="radio" checked />
+                                    <span>Female</span>
+                                    </label>
+                                </p>
+
+                            <!-- Radiobutton Male -->
+                                <p>
+                                    <label>
+                                    <input class="with-gap" name="group3" type="radio" />
+                                    <span>Male</span>
+                                    </label>
+                                </p>
+
+                            <!-- Radiobutton Other -->
+
+                                <p>
+                                    <label>
+                                    <input class="with-gap" name="group3" type="radio" />
+                                    <span>Other</span>
+                                    </label>
+                                    <div class="redError"></div>
+                                </p>
 
                             </div>
 
@@ -69,9 +91,15 @@
                             <div class="redError"></div>
 
                             <!-- Terms and Conditions -->
-                            <label for="agb">Accept terms and conditions
-                            <input type="checkbox" name="agb"></label>
-                            <div class="redError"></div>
+
+                            <p>
+                                <label>
+                                    <input type="checkbox" class="filled" name="agb" />
+                                    <span>Accept terms and conditions</span>
+                                </label>
+                                <div class="redError"></div>    
+                            </p>
+                            
 
                             <!-- Form nicht ausgefüllt -->
                             <div class="redError"></div>
@@ -87,7 +115,7 @@
 
                     </form>
 
-                
+    </section>            
 
 
 
