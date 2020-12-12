@@ -90,31 +90,31 @@
     <div class="slider">
     <ul class="slides">
       <li>
-        <img src="images/elnido.jpg"> <!-- random image -->
+        <img src="images/conference.jpg">
         <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h4>Big Hall</h3>
+          <h5 class="light grey-text text-lighten-3">Party with up to 400 people!</h5>
         </div>
       </li>
       <li>
-        <img src="images/beach.jpg"> <!-- random image -->
+        <img src="images/banquet.jpg">
         <div class="caption left-align">
-          <h3>Left Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h4>Team Meetings</h3>
+          <h5 class="light grey-text text-lighten-3">Optional meals can be booked for meetings</h5>
         </div>
       </li>
       <li>
-        <img src="images/wedding.jpg"> <!-- random image -->
+        <img src="images/weddingparty.jpg">
         <div class="caption right-align">
-          <h3>Right Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h4>Your Special Day</h3>
+          <h5 class="light grey-text text-lighten-3">Rent our location for beautiful weddings</h5>
         </div>
       </li>
       <li>
-        <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
+        <img src="images/club.jpg">
         <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h4>Concerts</h3>
+          <h5 class="light grey-text text-lighten-3">See your favorite artists!</h5>
         </div>
       </li>
     </ul>
