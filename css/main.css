@@ -9,12 +9,14 @@
 
 html {
     scroll-behavior: smooth;
+    /* height: 100%; */
 }
 
 body {
     background-color: #f4f4f4;
     font-family: 'Poppins', sans-serif;
     color: rgb(88, 88, 88);
+    height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,7 +39,7 @@ nav ul a {
 
 .parallax-container {
     position: relative;
-    top: 10%;
+    /* top: 10%; */
     width: 80%;
     margin: 0 auto;
     height: 400px;
@@ -119,6 +121,8 @@ nav ul a {
   .slider {
     max-width: 900px;
     margin: 0 auto;
+    z-index: -2;
+    margin-bottom: 10em;
   }
 
   .slider .indicators {
@@ -131,7 +135,7 @@ nav ul a {
 /* Login Section */
 
 #loginSection {
-    margin: 3em;
+    /* margin: 3em; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -179,28 +183,34 @@ input:focus {
     color: #d49a89;
     padding: 0.5em;
     cursor: pointer;
-    margin-top: 1em;
+    /* margin-top: 1em; */
 }
 
 /* Error & Success Messages */
 
 .redError {
     color: darkred;
+    background-color: rgb(247, 129, 129);
     padding: 0.5em;
     font-weight: bold;
+    border-radius: 5px;
 }
 
 .new {
-    color: green;
+    color: rgb(8, 92, 8);
+    background-color: rgb(151, 255, 151);
     padding: 0.5em;
     font-weight: bold;
+    border-radius: 5px;
 }
 
 
 /* Footer */
 
 footer {
-    position: absolute;
+    /* position: fixed; */
+    position: static;
+    bottom: 0;
     padding: 1em;
     width: 100%;
 }
@@ -235,10 +245,10 @@ footer {
     font-family: 'Poppins', sans-serif;
 }
 
-.privacyPolicy:hover {
+/* .privacyPolicy:hover {
     color: white;
     text-decoration: none;
-}
+} */
 
 .to-top-btn {
     display: flex;
