@@ -83,8 +83,6 @@
                     <h5>Sign up for our newsletter!</h6>
 
                         <label for="mail">Enter E-Mail<input type="text" name="mail" value=""></label>
-                         
-                        <div class="redError"></div>
                         
                         <input type="submit" class="subBtn" value="Sign me up" name="send">
 

@@ -55,7 +55,7 @@
 
     <header class="welcomeText">
         <h1>Crystal Lake Event Location</h1>
-        <p>Concerts, Festivals and more</p>
+        <p>offers truly unique event facilities for everything from elegant celebrations to casual gatherings.</p>
     </header>
     
 

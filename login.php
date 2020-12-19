@@ -94,6 +94,9 @@ $_SESSION['status'] = "You are logged in!"
         } elseif ( empty($_POST['agb']) ) {
             $errorMessage .= "You did not accept the terms and conditions.<br>";
             $go = false;
+        } elseif ( empty($_POST['email']) ) {
+            $errorMessage .= "You did not enter an email address.<br>";
+            $go = false;
         }
     }
 
@@ -117,7 +120,7 @@ $_SESSION['status'] = "You are logged in!"
 
 
         // In DB speichern
-        $sql = "INSERT INTO users (first_name, last_name,email, password) VALUE('".$firstName."', '".$surName."', '".$email."','".$hashPassword."')";
+        $sql = "INSERT INTO users (username, email, password) VALUE('".$usernameValue."', '".$emailValue."', '".$hashPass."')";
 		$result = mysqli_query($conn, $sql);
         
 

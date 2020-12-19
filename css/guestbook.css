@@ -7,3 +7,21 @@
     box-sizing: border-box;
 }
 
+.guestform {
+    /* border: solid 2px #d49a89; */
+    width: 50%;
+    margin: 0 auto;
+}
+
+.guestform h2 {
+    font-size: 2em;
+}
+
+textarea:focus + label {
+    color: #d49a89 !important;
+  }
+
+textarea:focus {
+    border-bottom: 2px solid #d49a89 !important;
+    box-shadow: 0 1px 0 0 #d49a89 !important
+  }
