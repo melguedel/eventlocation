@@ -120,7 +120,7 @@ $_SESSION['status'] = "You are logged in!"
 
 
         // In DB speichern
-        $sql = "INSERT INTO users (username, email, password) VALUE('".$usernameValue."', '".$emailValue."', '".$hashPass."')";
+        $sql = "INSERT INTO users (`username`, `email`, `password`) VALUE('".$usernameValue."', '".$emailValue."', '".$hashPass."')";
 		$result = mysqli_query($conn, $sql);
         
 

@@ -204,6 +204,14 @@ input:focus {
     border-radius: 5px;
 }
 
+/* User Comment */
+
+.userComment {
+    max-width: 800px;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(88, 88, 88);
+}
+
 
 /* Footer */
 

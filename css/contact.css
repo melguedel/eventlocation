@@ -1,11 +1,4 @@
-/* === Small CSS Reset === */
-*{
-    margin: 0;
-    padding: 0;
-}
-*, *::after, *::before{
-    box-sizing: border-box;
-}
+
 
 .contact {
     display: flex;
@@ -61,13 +54,6 @@ iframe {
 }
 
 /* Footer */
-
-footer {
-    position: static;
-    bottom: 0;
-    /* padding: 1em; */
-    width: 100%;
-}
 
 
 /* Media Queries */

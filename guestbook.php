@@ -53,34 +53,109 @@
 
     <!-- Guestbook Form -->
 
-    <form class="guestform" method="POST">
+    <?php
+
+        // mit DB verbinden
+            $link = mysqli_connect('localhost', 'root', 'root', 'eventlocation');
+
+            // check connection
+            if (!$link) {
+                echo 'Connection error: '.mysqli_connect_error();
+            }
+
+            // Query für Kommentare
+            $sql = 'SELECT `id`, `username`, `message` FROM `guestbook`';
+
+            // Query erstellen und Resultate aus DB holen
+            $result = mysqli_query($link, $sql);
+
+            // fetch die resultate als array
+
+            $comments = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+            // free result from memory
+
+            mysqli_free_result($result);
+
+
+
+      // Button wurde gedrückt
+
+    if ( isset($_POST['comment']) ) {
+        $username = strip_tags($_POST['username']);
+        $mail = strip_tags($_POST['mail']);
+        $message = strip_tags($_POST['message']);
+
+        if ( $username && $mail && $message ) {
+            // zu DB hinzufügen
+            $resultat = mysqli_query("INSERT INTO `guestbook` VALUES ('$username', '$mail', '$message')", $link);
+        } else {
+            echo "<div class=\"redError\">";
+            echo "You did not fill in all input fields.";
+            echo "</div>\n";
+        }
+    };
+
+    ?>
+
+    <form action="guestbook.php" class="guestform" method="POST">
 
         <h2>Share your thoughts!</h2>
         <p class="regInfo">about concerts, festivals and more.</p>
 
-        <label for="username">Username<input type="text" name="username" value="<?=$username?>"> </label>
+        <label for="username">Username<input type="text" name="username" value="<?=$username?>"></label>
 
-        <label for="email">Email<input type="text" name="password" value="<?=$mail?>"></label>
+        <label for="email">Email<input type="text" name="mail" value="<?=$mail?>"></label>
 
         <div class="row">
             <form class="col s12 guestform">
             <div class="row">
                 <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <textarea id="textarea1" class="materialize-textarea" name="message" value="<?=$message?>"></textarea>
                 <label for="textarea1">Textarea</label>
                 </div>
             </div>
 
-            <input type="submit" class="subBtn" value="Share your comment"></input>
+            <input type="submit" name="comment" class="subBtn" value="Share your comment"></input>
             </form>
         </div>
 
-        
+    </form>
 
 
-</form>
+    <?php
+
     
+        $rs = mysqli_query("SELECT `id`, `username`, `message` FROM `guestbook`", $link);
+            $numrows = mysqli_num_rows($rs);
 
+            if ( $numrows > 0 ) {
+                while ( $row = mysqli_fetch_assoc($rs) ) {
+                    $id = $row['id'];
+                    $username = $row['username'];
+                    $time = $row['time'];
+                    $message = $row['message'];
+
+                    // Kommentar des Users ausgeben
+                    echo "<div>
+                    $id - $username
+                    </div>";
+            } 
+            // else {
+            //     echo "<div class=\"redError\">";
+            //     echo "No posts were found.";
+            //     echo "</div>\n";
+            // }
+        };
+
+    // DB schliessen
+
+    mysqli_close($link);       
+
+
+    ?>
+
+    
     <!-- Footer -->
 
     <?php include "includes/footer.html"?>
