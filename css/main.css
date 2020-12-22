@@ -207,9 +207,11 @@ input:focus {
 /* User Comment */
 
 .userComment {
-    max-width: 800px;
+    width: 80%;
     font-family: 'Poppins', sans-serif;
     color: rgb(88, 88, 88);
+    margin: 0 auto;
+    padding: 1em;
 }
 
 

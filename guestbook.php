@@ -55,28 +55,18 @@
 
     <?php
 
-        // mit DB verbinden
-            $link = mysqli_connect('localhost', 'root', 'root', 'eventlocation');
-
-            // check connection
-            if (!$link) {
-                echo 'Connection error: '.mysqli_connect_error();
-            }
+            // DB Verbindung
+            include_once('includes/config.inc.php');
 
             // Query für Kommentare
-            $sql = 'SELECT `id`, `username`, `message` FROM `guestbook`';
+            // $sql = 'SELECT `id`, `username`, `message` FROM `guestbook`';
 
             // Query erstellen und Resultate aus DB holen
-            $result = mysqli_query($link, $sql);
+            // $result = mysqli_query($conn, $sql);
 
             // fetch die resultate als array
 
-            $comments = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-            // free result from memory
-
-            mysqli_free_result($result);
-
+            // $comments = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 
       // Button wurde gedrückt
@@ -86,9 +76,17 @@
         $mail = strip_tags($_POST['mail']);
         $message = strip_tags($_POST['message']);
 
-        if ( $username && $mail && $message ) {
+        // Ist Input in Username, Email und Message? 
+        if ( isset($username) && isset($mail) && isset($message) ) {
             // zu DB hinzufügen
-            $resultat = mysqli_query("INSERT INTO `guestbook` VALUES ('$username', '$mail', '$message')", $link);
+            $sql = "INSERT INTO `guestbook` (`username`, `email`, `message`) VALUES ('$username', '$mail', '$message')";
+            if (mysqli_query($conn, $sql)) {
+                // Kommentar erfolgreich gespeichert!
+                echo "<div class=\"new\">";
+                echo "Saved your comment!";
+                echo "</div>\n";
+            }
+            // $resultat = mysqli_query("INSERT INTO `guestbook` VALUES ('$username', '$mail', '$message')");
         } else {
             echo "<div class=\"redError\">";
             echo "You did not fill in all input fields.";
@@ -125,32 +123,49 @@
 
     <?php
 
-    
-        $rs = mysqli_query("SELECT `id`, `username`, `message` FROM `guestbook`", $link);
-            $numrows = mysqli_num_rows($rs);
+        // Query erstellen und von DB holen
+        $rs = "SELECT `username`,`message` FROM `guestbook`";
+        $rsquery = mysqli_query($conn, $rs);
+        // $rs = mysqli_query("SELECT `id`, `username`, `message` FROM `guestbook`", $conn);
+            // $numrows = mysqli_num_rows($rs);
 
-            if ( $numrows > 0 ) {
-                while ( $row = mysqli_fetch_assoc($rs) ) {
-                    $id = $row['id'];
-                    $username = $row['username'];
-                    $time = $row['time'];
-                    $message = $row['message'];
+        //     if ( $numrows > 0 ) {
+        //         while ( $row = mysqli_fetch_assoc($rs) ) {
+        //             $id = $row['id'];
+        //             $username = $row['username'];
+        //             $time = $row['time'];
+        //             $message = $row['message'];
 
-                    // Kommentar des Users ausgeben
-                    echo "<div>
-                    $id - $username
-                    </div>";
-            } 
-            // else {
+        //             // Kommentar des Users ausgeben
+        //             echo "<div>
+        //             $id - $username
+        //             </div>";
+        //     } 
+        //     // else {
+        //     //     echo "<div class=\"redError\">";
+        //     //     echo "No posts were found.";
+        //     //     echo "</div>\n";
+        //     // }
+        // };
+
+        if (mysqli_num_rows($rsquery) > 0) {
+            // Daten ausgeben
+            while($row = mysqli_fetch_assoc($rsquery)) {
+                echo "<div class=\"userComment\">";
+                echo "<b>Username:</b> ".$row['username']."<br>"." <b>Message:</b> ".$row['message']."<br>";
+                echo "</div>\n";
+                // } else {
             //     echo "<div class=\"redError\">";
             //     echo "No posts were found.";
             //     echo "</div>\n";
-            // }
+            }
         };
+
+
 
     // DB schliessen
 
-    mysqli_close($link);       
+    mysqli_close($conn);       
 
 
     ?>
