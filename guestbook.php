@@ -55,26 +55,18 @@
 
     <?php
 
-            // DB Verbindung
-            include_once('includes/config.inc.php');
-
-            // Query für Kommentare
-            // $sql = 'SELECT `id`, `username`, `message` FROM `guestbook`';
-
-            // Query erstellen und Resultate aus DB holen
-            // $result = mysqli_query($conn, $sql);
-
-            // fetch die resultate als array
-
-            // $comments = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    // DB Verbindung
+    include_once('includes/config.inc.php');
 
 
-      // Button wurde gedrückt
+    // Button wurde gedrückt
 
     if ( isset($_POST['comment']) ) {
-        $username = strip_tags($_POST['username']);
-        $mail = strip_tags($_POST['mail']);
-        $message = strip_tags($_POST['message']);
+
+        // Variablen definieren und Tags aus Input entfernen
+        $username = strip_tags($_POST['username'], FILTER_SANITIZE_STRING);
+        $mail = strip_tags($_POST['mail'], FILTER_SANITIZE_EMAIL);
+        $message = strip_tags($_POST['message'], FILTER_SANITIZE_STRING);
 
         // Ist Input in Username, Email und Message? 
         if ( isset($username) && isset($mail) && isset($message) ) {
@@ -86,13 +78,18 @@
                 echo "Saved your comment!";
                 echo "</div>\n";
             }
-            // $resultat = mysqli_query("INSERT INTO `guestbook` VALUES ('$username', '$mail', '$message')");
         } else {
             echo "<div class=\"redError\">";
             echo "You did not fill in all input fields.";
             echo "</div>\n";
+        } 
+
+    } else {
+            // Falls noch nichts eingegeben wurde, alles auf leer setzen
+            $username = "";
+            $mail = "";
+            $message = "";
         }
-    };
 
     ?>
 
@@ -126,28 +123,8 @@
         // Query erstellen und von DB holen
         $rs = "SELECT `username`,`message` FROM `guestbook`";
         $rsquery = mysqli_query($conn, $rs);
-        // $rs = mysqli_query("SELECT `id`, `username`, `message` FROM `guestbook`", $conn);
-            // $numrows = mysqli_num_rows($rs);
-
-        //     if ( $numrows > 0 ) {
-        //         while ( $row = mysqli_fetch_assoc($rs) ) {
-        //             $id = $row['id'];
-        //             $username = $row['username'];
-        //             $time = $row['time'];
-        //             $message = $row['message'];
-
-        //             // Kommentar des Users ausgeben
-        //             echo "<div>
-        //             $id - $username
-        //             </div>";
-        //     } 
-        //     // else {
-        //     //     echo "<div class=\"redError\">";
-        //     //     echo "No posts were found.";
-        //     //     echo "</div>\n";
-        //     // }
-        // };
-
+        
+        // checken ob mehr als 0 Einträge in DB sind
         if (mysqli_num_rows($rsquery) > 0) {
             // Daten ausgeben
             while($row = mysqli_fetch_assoc($rsquery)) {
@@ -162,9 +139,7 @@
         };
 
 
-
     // DB schliessen
-
     mysqli_close($conn);       
 
 
