@@ -108,7 +108,7 @@ $_SESSION['status'] = "You are logged in!"
         $usernameValue = killGerms($_POST['username'], FILTER_SANITIZE_STRING);
         $emailValue = killGerms($_POST['email'], FILTER_SANITIZE_EMAIL);
         $passwordValue = killGerms($_POST['password'], FILTER_SANITIZE_STRING);
-
+        
 
         // Länge der Eingabe validieren
         stringLaenge($usernameValue, "Username", 2, 50);
@@ -118,17 +118,30 @@ $_SESSION['status'] = "You are logged in!"
         // Passwort verschlüsseln
         $hashPass = password_hash($passwordValue, PASSWORD_DEFAULT);
 
+        // Variable für Geschlecht
+        $gender = $_POST['group3'];
 
         // In DB speichern
-        $sql = "INSERT INTO users (`username`, `email`, `password`) VALUE('".$usernameValue."', '".$emailValue."', '".$hashPass."')";
+        $sql = "INSERT INTO `users` (`gender`, `user`, `mail`, `password`) VALUES ('$gender', '$usernameValue', '$emailValue', '$hashPass')";
 		$result = mysqli_query($conn, $sql);
         
 
         // Sind die Eingaben richtig?
         if ($go && isset($_POST['agb']) && $result ) {
             // Eingabe richtig!
+
+            // Email senden an
+            $to = "straying.star@gmx.ch";
+            // $to = $emailValue;
+            $emailBody = "";
+
+            $emailBody .= "From: ". $usernameValue. "\r\n";
+            $emailBody .= "Email: ". $emailValue. "\r\n";
+            $emailBody .= "You are now registered at Crystal Lake Events!";
+
+            // Anzeigen
             echo "<div class=\"new\">";
-            echo "New registration is done!";
+            echo "New registration is done! Email sent";
             echo "</div>\n";
         } 
         else {
@@ -165,7 +178,7 @@ $_SESSION['status'] = "You are logged in!"
                             <!-- Radiobutton Female -->
                                 <p>
                                     <label>
-                                    <input class="with-gap" name="group3" type="radio" checked />
+                                    <input class="with-gap" name="group3" value="female" type="radio" checked />
                                     <span>Female</span>
                                     </label>
                                 </p>
@@ -173,7 +186,7 @@ $_SESSION['status'] = "You are logged in!"
                             <!-- Radiobutton Male -->
                                 <p>
                                     <label>
-                                    <input class="with-gap" name="group3" type="radio" />
+                                    <input class="with-gap" name="group3" value="male" type="radio" />
                                     <span>Male</span>
                                     </label>
                                 </p>
@@ -182,7 +195,7 @@ $_SESSION['status'] = "You are logged in!"
 
                                 <p>
                                     <label>
-                                    <input class="with-gap" name="group3" type="radio" />
+                                    <input class="with-gap" name="group3" value="other" type="radio" />
                                     <span>Other</span>
                                     </label>
                                     <!-- <div class="redError"><?=$errorMessage?></div> -->
@@ -192,13 +205,10 @@ $_SESSION['status'] = "You are logged in!"
 
                             <!-- Eingabefelder -->
                             <label for="username">Username<input type="text" name="username" value="<?=$usernameValue?>"></label>
-                            <!-- <div class="redError"><?=$errorMessage?></div> -->
 
                             <label for="email">E-Mail<input type="email" name="email" value="<?=$emailValue?>"></label>
-                            <!-- <div class="redError"><?=$errorMessage?></div> -->
 
                             <label for="password">Password<input type="text" name="password" value="<?=$passwordValue?>"></label>
-                            <!-- <div class="redError"><?=$errorMessage?></div> -->
 
                             <!-- Terms and Conditions -->
 
@@ -207,15 +217,7 @@ $_SESSION['status'] = "You are logged in!"
                                     <input type="checkbox" class="filled" name="agb" />
                                     <span>Accept terms and conditions</span>
                                 </label>
-                                <!-- <div class="redError"><?=$errorMessage?></div>     -->
                             </p>
-                            
-
-                            <!-- Form nicht ausgefüllt -->
-                            <!-- <div class="redError"><?=$errorMessage?></div> -->
-
-                            <!-- Form korrekt abgeschickt -->
-                            <!-- <div class="new"></div> -->
 
                             <!-- Submit -->
                             <input type="submit" class="subBtn" name="submit" value="Register"></input>

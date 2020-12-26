@@ -68,8 +68,11 @@
         $mail = strip_tags($_POST['mail'], FILTER_SANITIZE_EMAIL);
         $message = strip_tags($_POST['message'], FILTER_SANITIZE_STRING);
 
+        // Email Variable zusätzlich mit Filter validieren
+        $validMail = filter_var($mail, FILTER_VALIDATE_EMAIL);
+
         // Ist Input in Username, Email und Message? 
-        if ( isset($username) && isset($mail) && isset($message) ) {
+        if ( isset($username) && isset($validMail) && isset($message) ) {
             // zu DB hinzufügen
             $sql = "INSERT INTO `guestbook` (`username`, `email`, `message`) VALUES ('$username', '$mail', '$message')";
             if (mysqli_query($conn, $sql)) {
@@ -77,14 +80,13 @@
                 echo "<div class=\"new\">";
                 echo "Saved your comment!";
                 echo "</div>\n";
-            }
-        } else {
+            } else {
             echo "<div class=\"redError\">";
             echo "You did not fill in all input fields.";
             echo "</div>\n";
         } 
-
-    } else {
+    } 
+} else {
             // Falls noch nichts eingegeben wurde, alles auf leer setzen
             $username = "";
             $mail = "";
@@ -106,7 +108,7 @@
             <form class="col s12 guestform">
             <div class="row">
                 <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea" name="message" value="<?=$message?>"></textarea>
+                <textarea id="textarea1" class="materialize-textarea" name="message"><?=$message?></textarea>
                 <label for="textarea1">Textarea</label>
                 </div>
             </div>
