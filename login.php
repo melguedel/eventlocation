@@ -198,7 +198,6 @@ $_SESSION['status'] = "You are logged in!"
                                     <input class="with-gap" name="group3" value="other" type="radio" />
                                     <span>Other</span>
                                     </label>
-                                    <!-- <div class="redError"><?=$errorMessage?></div> -->
                                 </p>
 
                             </div>
@@ -229,6 +228,9 @@ $_SESSION['status'] = "You are logged in!"
 
 
     <?php
+
+    // Notices ausschalten
+    error_reporting(E_ALL ^  E_NOTICE);
 
     // Wurde Login Button gedrückt?
     if ( isset($_POST['login']) ) {
@@ -263,6 +265,10 @@ $_SESSION['status'] = "You are logged in!"
             echo "No user found!";
             echo "</div>\n";
         }
+    } else {
+        // Falls noch nichts eingegeben wurde, alles auf leer setzen
+        $user = "";
+        $pass = "";
     }
 
 

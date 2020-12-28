@@ -26,6 +26,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navbar */
 
+.brand-logo img {
+    margin: 0 auto;
+    max-width: 40px;
+}
+
 nav ul a {
     font-family: 'Poppins', sans-serif;
 }
