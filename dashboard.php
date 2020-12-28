@@ -73,7 +73,7 @@ $_SESSION['status'] = "You are logged in!"
 
 // In ein Textfile schreiben
 if ( isset($_POST['save']) ) {
-    writeContent("content.txt");
+    schreibeContent("content.txt");
 }
 
 // Funktion um in Textfile zu schreiben
@@ -140,9 +140,9 @@ if ( isset($_POST['save']) ) {
 
     <script>
 
-        // CKEditor einfügen
+        // CKEditor einfügen anstelle der Textarea
         CKEDITOR.replace('inhalt', {
-            customConfig:"/ckeditor/custom_config.js"
+            customConfig:"../ckeditor/custom_config.js"
         });
 
     </script>
