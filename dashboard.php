@@ -38,6 +38,7 @@ $_SESSION['status'] = "You are logged in!"
     <!-- Other Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/dashboard.css">
+    <script src="ckeditor/ckeditor.js"></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -141,8 +142,9 @@ if ( isset($_POST['save']) ) {
     <script>
 
         // CKEditor einfügen anstelle der Textarea
-        CKEDITOR.replace('inhalt', {
-            customConfig:"../ckeditor/custom_config.js"
+        CKEDITOR.replace( 'inhalt', {
+            customConfig:"newconfig.js",
+            width: "80%"
         });
 
     </script>

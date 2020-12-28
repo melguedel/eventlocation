@@ -1,4 +1,6 @@
 
+/* Header and Vertical Menu */
+
 h3 {
     text-align: center;
 }
@@ -19,4 +21,14 @@ h3 {
   .vertical-menu a:hover {
     /* background-color: #d49a89; */
     background-color: #424242;
+  }
+
+  /* Textarea */
+
+  textarea {
+    width: 80%;
+  }
+
+  .subBtn {
+    margin: 1em;
   }
