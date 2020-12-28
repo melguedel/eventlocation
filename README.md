@@ -2,10 +2,11 @@ CONTENTS OF THIS FILE
 ---------------------
 
 > Introduction
- 
-Project custom made Content Management System January 2021. WBD 5100. <br>
+
+WBD 5100. <br>
+Project custom made Content Management System January 2021. 
 The project is about an event location where concerts, different kinds of festivals and other parties are held. The location is also available for private parties like weddings.<br>
-It is inspired by <a href="https://www.schloss-liebegg.ch/">Schloss Liebegg</a>.
+This project is inspired by <a href="https://www.schloss-liebegg.ch/">Schloss Liebegg</a>.
 
 The custom made CMS enables the admin of the website to edit text on the landing page.
 
@@ -18,11 +19,12 @@ The custom made CMS enables the admin of the website to edit text on the landing
  > Requirements
 
 ° Responsive Layout <br>
-° Database <br>
 ° Login Form <br>
 ° Register Form <br>
 ° Secure Data Transfer <br>
-° Administration Tool, only available trough login
+° Datamanipulation with PHP/ MySQL <br>
+° Use of Frontend Frameworks and Libraries <br>
+° Administration Tool, only available trough Login
 
  > Optional
 
