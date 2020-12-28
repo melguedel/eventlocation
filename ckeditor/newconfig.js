@@ -7,7 +7,7 @@ CKEDITOR.editorConfig = function( config ) {
     
     CKEDITOR.stylesSet.add( 'my_styles', [
         // Block-level styles.
-        { name: 'Blue Title', element: 'h2', styles: { color: 'Blue' } },
+        { name: 'Orange Title', element: 'h2', styles: { color: '#d49a89' }, attributes: {'class': 'ueberschrift1'} },
         { name: 'Red Title',  element: 'h3', styles: { color: 'Red' } },
     
         // Inline styles.

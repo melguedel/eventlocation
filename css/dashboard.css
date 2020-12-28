@@ -25,10 +25,10 @@ h3 {
 
   /* Textarea */
 
-  textarea {
-    width: 80%;
+   .subBtn {
+    margin: 1em;
   }
 
-  .subBtn {
-    margin: 1em;
+  .ueberschrift1 {
+    color: #d49a89;
   }

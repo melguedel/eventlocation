@@ -58,40 +58,80 @@
     // DB Verbindung
     include_once('includes/config.inc.php');
 
+    // Variablen erstellen
+    $errorMessage = "";
+    $go = true;
 
-    // Button wurde gedrückt
+    // Funktion um alle Sonderzeichen, Leerschläge und Tags entfernen
+    function killGerms($str){
+        $str = trim($str);
+        $str = strip_tags($str);
+        $str = htmlspecialchars($str); 
+        return $str;
+    }
 
-    if ( isset($_POST['comment']) ) {
+    // Funktion um Länge der Eingabe zu validieren
+    function stringLaenge ($str, $feld, $min) {
+        global $errorMessage;
+        global $go;
 
-        // Variablen definieren und Tags aus Input entfernen
-        $username = strip_tags($_POST['username'], FILTER_SANITIZE_STRING);
-        $mail = strip_tags($_POST['mail'], FILTER_SANITIZE_EMAIL);
-        $message = strip_tags($_POST['message'], FILTER_SANITIZE_STRING);
+        // Anzahl der Zeichen checken
+        $laengeZeichen = strlen($str);
+        if ( $laengeZeichen < $min ) {
+            $errorMessage .= "Input in ".$feld." too short! Must at least be ".$min." characters.<br>";
+            $go = false;
+        } elseif ( empty($_POST['mail']) ) {
+            $errorMessage .= "You did not enter an email address.<br>";
+            $go = false;
+        } elseif ( empty($_POST['message']) ) {
+            $errorMessage .= "You did not enter a message.<br>";
+            $go = false;
+        }
+    }
 
-        // Email Variable zusätzlich mit Filter validieren
-        $validMail = filter_var($mail, FILTER_VALIDATE_EMAIL);
+        // Button gedrückt?
+        if ( isset($_POST['comment']) ) {
 
-        // Ist Input in Username, Email und Message? 
-        if ( isset($username) && isset($validMail) && isset($message) ) {
-            // zu DB hinzufügen
+            // "Desinfektion" der Eingaben
+            // Variablen definieren und Tags aus Input entfernen
+            $username = killGerms($_POST['username'], FILTER_SANITIZE_STRING);
+            $mail = killGerms($_POST['mail'], FILTER_SANITIZE_EMAIL);
+            $message = killGerms($_POST['message'], FILTER_SANITIZE_STRING);
+            
+    
+            // Länge der Eingabe validieren
+            stringLaenge($username, "Username", 2);
+            stringLaenge($message, "Message", 2);
+    
+    
+            // In DB speichern
             $sql = "INSERT INTO `guestbook` (`username`, `email`, `message`) VALUES ('$username', '$mail', '$message')";
-            if (mysqli_query($conn, $sql)) {
+            $result = mysqli_query($conn, $sql);
+            
+    
+            // Sind die Eingaben richtig?
+            if ( $go && $result && isset($username) && isset($mail) && isset($message) ) {
                 // Kommentar erfolgreich gespeichert!
                 echo "<div class=\"new\">";
                 echo "Saved your comment!";
                 echo "</div>\n";
-            } else {
-            echo "<div class=\"redError\">";
-            echo "You did not fill in all input fields.";
-            echo "</div>\n";
-        } 
-    } 
-} else {
+            } 
+            else {
+                // Angaben falsch
+                echo "<div class=\"redError\">";
+                echo $errorMessage;
+                echo "</div>\n";
+            }
+    
+        }
+        
+        else {
             // Falls noch nichts eingegeben wurde, alles auf leer setzen
             $username = "";
             $mail = "";
             $message = "";
         }
+
 
     ?>
 
