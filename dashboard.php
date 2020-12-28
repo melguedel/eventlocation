@@ -31,8 +31,6 @@ $_SESSION['status'] = "You are logged in!"
     <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    
-
     <!-- Materialize CSS Stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -59,9 +57,9 @@ $_SESSION['status'] = "You are logged in!"
 
     <?php include "includes/navbar.html"?>
 
-    <h3>Welcome back!</h3>
-
 <!-- Vertical Side Navigation -->
+
+<h3>Welcome back!</h3>
 
     <div class="vertical-menu">
         <a href="#">Edit Landing Page</a>
@@ -74,10 +72,55 @@ $_SESSION['status'] = "You are logged in!"
 <?php
 
 // In ein Textfile schreiben
-if ( isset($_POST['go']) ) {
+if ( isset($_POST['save']) ) {
     writeContent("content.txt");
 }
 
+// Funktion um in Textfile zu schreiben
+function schreibeContent($contentFile) {
+    $handler = fopen($contentFile, "w");
+    // Was in Textarea geschrieben wird ausgeben
+    fwrite($handler, $_POST['inhalt']);
+    // Datei schliessen
+    fclose($handler);
+}
+
+// Funktion um Textfile zu lesen
+function leseContent($contentFile) {
+    // In Array einlesen, jede Textzeile durchiterieren
+    $arr = file($contentFile);
+    $content= "";
+    foreach ($arr as $aus) {
+        $content .= $aus;
+    }
+    return $content;
+}
+
+// Text der in Content File reingeschrieben wurde wieder anzeigen
+$output = leseContent("content.txt");
+
+?>
+
+<!-- Editor und Speichern Button -->
+
+<form action="dashboard.php" method="POST">
+    <textarea name="inhalt" id="inhalt"><?=$output?></textarea>
+    <button type="submit" class="subBtn" name="save">Save Text</button>
+</form>
+
+<?php
+
+// Wurde der Submit Button gedrückt?
+if ( isset($_POST['save']) ) {
+    // wenn ja:
+    schreibeContent("content.txt");
+    echo "<div class=\"new\">";
+    echo "Changes saved!";
+    echo "</div>\n";
+}
+
+
+?>
 
     <!-- Footer -->
 
@@ -94,6 +137,15 @@ if ( isset($_POST['go']) ) {
 
     <!-- JS Scripts -->
     <script src="js/code.js"></script>
+
+    <script>
+
+        // CKEditor einfügen
+        CKEDITOR.replace('inhalt', {
+            customConfig:"/ckeditor/custom_config.js"
+        });
+
+    </script>
 
 </body>
 </html>
