@@ -120,16 +120,16 @@ $_SESSION['status'] = "You are logged in!"
 
         // Variable für Geschlecht
         $gender = $_POST['group3'];
-        // var_dump($usernameValue);
+        // var_dump($gender);
 
-        // In DB speichern
-        $sql = "INSERT INTO `users` (`gender`, `user`, `mail`, `password`) VALUES ('$gender', '$usernameValue', '$emailValue', '$hashPass')";
-		$result = mysqli_query($conn, $sql);
-        
-
+       
         // Sind die Eingaben richtig?
-        if ($go && isset($_POST['agb']) && $result ) {
+        if ( $go && isset($_POST['agb']) ) {
             // Eingabe richtig!
+
+            // In DB speichern
+            $sql = "INSERT INTO `users` (`gender`, `user`, `mail`, `password`) VALUES ('$gender', '$usernameValue', '$emailValue', '$hashPass')";
+            $result = mysqli_query($conn, $sql);
 
             // Email senden an
             $to = "straying.star@gmx.ch";
@@ -173,7 +173,6 @@ $_SESSION['status'] = "You are logged in!"
                         <p class="regInfo">and get discounts and goodies for upcoming events!</p>
 
                             <!-- Radiobuttons -->
-
                             <div class="radiobtn">
                                 
                             <!-- Radiobutton Female -->
@@ -193,7 +192,6 @@ $_SESSION['status'] = "You are logged in!"
                                 </p>
 
                             <!-- Radiobutton Other -->
-
                                 <p>
                                     <label>
                                     <input class="with-gap" name="group3" value="other" type="radio" />
@@ -211,7 +209,6 @@ $_SESSION['status'] = "You are logged in!"
                             <label for="password">Password<input type="password" name="password" value="<?=$passwordValue?>"></label>
 
                             <!-- Terms and Conditions -->
-
                             <p>
                                 <label>
                                     <input type="checkbox" class="filled" name="agb" />
@@ -286,11 +283,10 @@ $_SESSION['status'] = "You are logged in!"
 
                         <label for="userName">Username<input type="text" name="userName" value="<?=$user?>"></label>
 
-                        <label for="pass">Password<input type="text" name="pass" value="<?=$pass?>"></label>
+                        <label for="pass">Password<input type="password" name="pass" value="<?=$pass?>"></label>
                         
-                        <!-- <input type="submit" class="subBtn" name="login" value="Log me in"></input> -->
-                        <button type="button" class="subBtn">Log me in</button>
-
+                        <input type="submit" class="subBtn" name="login" value="Log me in"></input>
+                        
                         <p class="logMessage">Not registered yet? <a class="toggleBtn">Register here</a></p>
 
                  </form>
@@ -314,6 +310,8 @@ $_SESSION['status'] = "You are logged in!"
 
     <!-- JS Scripts -->
     <script src="js/code.js"></script>
-
+ 
+    
+    
 </body>
 </html>

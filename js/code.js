@@ -17,8 +17,7 @@ $('.slider').slider();
 
 // Login Toggle Button
 
-$('.toggleBtn').click(function (e){
-    e.preventDefault();
+$('.toggleBtn').click(function (){
     console.log('toggle');
     $('.logForm').toggle();
 });
