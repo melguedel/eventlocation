@@ -120,6 +120,7 @@ $_SESSION['status'] = "You are logged in!"
 
         // Variable für Geschlecht
         $gender = $_POST['group3'];
+        // var_dump($usernameValue);
 
         // In DB speichern
         $sql = "INSERT INTO `users` (`gender`, `user`, `mail`, `password`) VALUES ('$gender', '$usernameValue', '$emailValue', '$hashPass')";
@@ -207,7 +208,7 @@ $_SESSION['status'] = "You are logged in!"
 
                             <label for="email">E-Mail<input type="email" name="email" value="<?=$emailValue?>"></label>
 
-                            <label for="password">Password<input type="text" name="password" value="<?=$passwordValue?>"></label>
+                            <label for="password">Password<input type="password" name="password" value="<?=$passwordValue?>"></label>
 
                             <!-- Terms and Conditions -->
 
@@ -240,14 +241,16 @@ $_SESSION['status'] = "You are logged in!"
         $pass = killGerms($_POST['pass'], FILTER_SANITIZE_STRING);
 
         // Ist Username vorhanden in DB?
-        $sql = "SELECT * FROM users WHERE user = '".$user."'";
+        $sql = "SELECT * FROM users WHERE user = '$user' ";
         $rs = mysqli_query($conn, $sql);
         $numRows = mysqli_num_rows($rs);
+        // var_dump($numRows);
 
         // Ist Passwort korrekt?
         if ($numRows == 1) {
             $row = mysqli_fetch_assoc($rs);
-            if (password_verify($pass, $row['pass'])) {
+            var_dump($row['password']);
+            if (password_verify($pass, $row['password'])) {
                 // Eingabe richtig!
                 // Umleitung auf Login-Seite
 	            header('Location: dashboard.php');
@@ -260,7 +263,7 @@ $_SESSION['status'] = "You are logged in!"
             }
         } 
         else {
-            // Falscher User
+            // Kein User gefunden
             echo "<div class=\"redError\">";
             echo "No user found!";
             echo "</div>\n";
@@ -285,7 +288,8 @@ $_SESSION['status'] = "You are logged in!"
 
                         <label for="pass">Password<input type="text" name="pass" value="<?=$pass?>"></label>
                         
-                        <input type="submit" class="subBtn" name="login" value="Log me in"></input>
+                        <!-- <input type="submit" class="subBtn" name="login" value="Log me in"></input> -->
+                        <button type="button" class="subBtn">Log me in</button>
 
                         <p class="logMessage">Not registered yet? <a class="toggleBtn">Register here</a></p>
 

@@ -104,10 +104,7 @@
             stringLaenge($message, "Message", 2);
     
     
-            // In DB speichern
-            $sql = "INSERT INTO `guestbook` (`username`, `email`, `message`) VALUES ('$username', '$mail', '$message')";
-            $result = mysqli_query($conn, $sql);
-            
+           
     
             // Sind die Eingaben richtig?
             if ( $go && $result && isset($username) && isset($mail) && isset($message) ) {
@@ -115,6 +112,11 @@
                 echo "<div class=\"new\">";
                 echo "Saved your comment!";
                 echo "</div>\n";
+                
+                 // In DB speichern
+            $sql = "INSERT INTO `guestbook` (`username`, `email`, `message`) VALUES ('$username', '$mail', '$message')";
+            $result = mysqli_query($conn, $sql);
+            
             } 
             else {
                 // Angaben falsch
