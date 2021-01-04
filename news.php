@@ -1,9 +1,3 @@
-<?php
-session_start();
-$_SESSION['status'] = "You are logged in!"
-// include_once('includes/config.inc.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,8 +31,7 @@ $_SESSION['status'] = "You are logged in!"
     
     <!-- Other Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <script src="ckeditor/ckeditor.js"></script>
+    <link rel="stylesheet" href="css/news.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -48,7 +41,7 @@ $_SESSION['status'] = "You are logged in!"
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     
     <!-- Title -->
-    <title>Crystal Lake Events DASHBOARD</title>
+    <title>Crystal Lake Events News</title>
 
 </head>
 
@@ -58,70 +51,74 @@ $_SESSION['status'] = "You are logged in!"
 
     <?php include "includes/navbar.html"?>
 
-<!-- Vertical Side Navigation -->
 
-<h3>Welcome back!</h3>
+    <!-- Header -->
 
-    <div class="vertical-menu">
-        <a href="#">Edit Landing Page</a>
-        <a href="#">Edit Guestbook</a>
-        <a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    <header class="welcomeText">
+        <h2>Crystal Lake News</h2>
+        <p>Upcoming concerts, festivals, markets and more.</p>
+    </header>
+
+
+    <!-- Cards Section -->
+
+<section class="cards">
+
+        <div class="row">
+        <div class="col s12 m7">
+        <div class="card">
+            <div class="card-image">
+            <img src="images/Grimes.jpg">
+            <span class="card-title">Grimes</span>
+            </div>
+            <div class="card-content">
+            <p>Grimes is a Canadian musician, singer, songwriter, record producer, music video director, and visual artist. Her music incorporates elements of varied styles and genres including dream pop, synth-pop, art pop, electronic, experimental pop, R&B, and hip hop.</p>
+            </div>
+            <div class="card-action">
+            <a href="https://www.ticketcorner.ch/" target="_blank" rel="noopener" class="subBtn">Buy Ticket</a>
+            </div>
+        </div>
+        </div>
     </div>
 
-<!-- CK Editor  -->
-         
-<?php
+    <div class="row">
+        <div class="col s12 m7">
+        <div class="card">
+            <div class="card-image">
+            <img src="images/noRome.jpg">
+            <span class="card-title">No Rome</span>
+            </div>
+            <div class="card-content">
+            <p>Gen-Z's next music icon is a Manila-born polymath with hair that cycles through kaleidoscopic shades - and he's about to hotwire today's pop landscape with his poignantly personal, genre-splicing songs.</p>
+            </div>
+            <div class="card-action">
+            <a href="https://www.ticketcorner.ch/" target="_blank" rel="noopener" class="subBtn">Buy Ticket</a>
+            </div>
+        </div>
+        </div>
+    </div>
 
-// In ein Textfile schreiben
-if ( isset($_POST['save']) ) {
-    schreibeContent("content.txt");
-}
+    <div class="row">
+        <div class="col s12 m7">
+        <div class="card">
+            <div class="card-image">
+            <img src="images/festival.jpg">
+            <span class="card-title">Food Festival</span>
+            </div>
+            <div class="card-content">
+            <p>Food lovers should not miss this festival! Good food is what life is all about, and summer is the best time of year for it.</p>
+            </div>
+            <div class="card-action">
+            <a href="https://www.ticketcorner.ch/" target="_blank" rel="noopener" class="subBtn">Buy Ticket</a>
+            </div>
+        </div>
+        </div>
+    </div>
 
-// Funktion um in Textfile zu schreiben
-function schreibeContent($contentFile) {
-    $handler = fopen($contentFile, "w");
-    // Was in Textarea geschrieben wird ausgeben
-    fwrite($handler, $_POST['inhalt']);
-    // Datei schliessen
-    fclose($handler);
-}
-
-// Funktion um Textfile zu lesen
-function leseContent($contentFile) {
-    // In Array einlesen, jede Textzeile durchiterieren
-    $arr = file($contentFile);
-    $content= "";
-    foreach ($arr as $aus) {
-        $content .= $aus;
-    }
-    return $content;
-}
-
-// Text der in Content File reingeschrieben wurde wieder anzeigen
-$output = leseContent("content.txt");
-
-?>
-
-<!-- Editor und Speichern Button -->
-
-<form action="dashboard.php" method="POST">
-    <textarea name="inhalt" id="inhalt"><?=$output?></textarea>
-    <button type="submit" class="subBtn" name="save">Save Text</button>
-</form>
-
-<?php
-
-// Wurde der Submit Button gedrückt?
-if ( isset($_POST['save']) ) {
-    // wenn ja:
-    schreibeContent("content.txt");
-    echo "<div class=\"new\">";
-    echo "Changes saved!";
-    echo "</div>\n";
-}
+</section>
+    
 
 
-?>
 
     <!-- Footer -->
 
@@ -138,16 +135,6 @@ if ( isset($_POST['save']) ) {
 
     <!-- JS Scripts -->
     <script src="js/code.js"></script>
-
-    <script>
-
-        // CKEditor einfügen anstelle der Textarea
-        CKEDITOR.replace( 'inhalt', {
-            customConfig:"newconfig.js",
-            width: "80%"
-        });
-
-    </script>
 
 </body>
 </html>

@@ -107,7 +107,7 @@
            
     
             // Sind die Eingaben richtig?
-            if ( $go && $result && isset($username) && isset($mail) && isset($message) ) {
+            if ( $go && isset($username) && isset($mail) && isset($message) ) {
                 // Kommentar erfolgreich gespeichert!
                 echo "<div class=\"new\">";
                 echo "Saved your comment!";

@@ -246,9 +246,26 @@ $_SESSION['status'] = "You are logged in!"
         // Ist Passwort korrekt?
         if ($numRows == 1) {
             $row = mysqli_fetch_assoc($rs);
-            var_dump($row['password']);
+            // var_dum p($row['password']);
             if (password_verify($pass, $row['password'])) {
                 // Eingabe richtig!
+
+                 // prepared-statement erstellen
+                 // user input mit datenbank infos vergleichen
+                $query = "SELECT * FROM `users` WHERE `user`=? and `password`=?";
+                // Statement bereitet die verbindung mit query und DB vor
+                $statement = mysqli_prepare($conn, $query);
+                // Bind Parameter bindet Statement
+                mysqli_stmt_bind_param($statement, 'ss', $user, $pass);
+                // execute führt das statement aus
+                mysqli_stmt_execute($statement);
+                $resultat = mysqli_stmt_get_result($statement);
+                // $getData = mysqli_fetch_assoc($resultat);
+                
+                // Session ID erstellen
+                $_SESSION['username'] = $userdaten['username'];
+                $_SESSION['userid'] = $userID;
+
                 // Umleitung auf Login-Seite
 	            header('Location: dashboard.php');
             }
