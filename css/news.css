@@ -1,12 +1,14 @@
 
 
-.cards {
-    display: flex;
-    /* flex-direction: row; */
-    /* justify-content: space-evenly;
-    align-items: center; */
+.row {
+    margin: 0 auto;
 }
 
-a .card-action  {
-    color: #d49a89 !important; 
+.card .card-image .card-title {
+    color: #d49a89;
+    font-family: 'Playfair Display', serif;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color: #d49a89;
 }
