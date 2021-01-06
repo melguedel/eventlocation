@@ -70,44 +70,22 @@ $_SESSION['status'] = "You are logged in!"
 
 <!-- CK Editor  -->
          
-<?php
-
-// In ein Textfile schreiben
-if ( isset($_POST['save']) ) {
-    schreibeContent("content.txt");
-}
-
-// Funktion um in Textfile zu schreiben
-function schreibeContent($contentFile) {
-    $handler = fopen($contentFile, "w");
-    // Was in Textarea geschrieben wird ausgeben
-    fwrite($handler, $_POST['inhalt']);
-    // Datei schliessen
-    fclose($handler);
-}
-
-// Funktion um Textfile zu lesen
-function leseContent($contentFile) {
-    // In Array einlesen, jede Textzeile durchiterieren
-    $arr = file($contentFile);
-    $content= "";
-    foreach ($arr as $aus) {
-        $content .= $aus;
-    }
-    return $content;
-}
-
-// Text der in Content File reingeschrieben wurde wieder anzeigen
-$output = leseContent("content.txt");
-
-?>
+<?php include "includes/editor.php"?>
 
 <!-- Editor und Speichern Button -->
 
-<form action="dashboard.php" method="POST">
-    <textarea name="inhalt" id="inhalt"><?=$output?></textarea>
-    <button type="submit" class="subBtn" name="save">Save Text</button>
-</form>
+<section class="editText">
+
+        <p><?=$output?></p>
+        
+        <form action="dashboard.php" method="POST">
+            <textarea name="inhalt" id="inhalt"><?=$output?></textarea>
+            <button type="submit" class="subBtn" name="save">Save Text</button>
+        </form>
+
+</section>
+
+
 
 <?php
 
@@ -143,8 +121,7 @@ if ( isset($_POST['save']) ) {
 
         // CKEditor einfügen anstelle der Textarea
         CKEDITOR.replace( 'inhalt', {
-            customConfig:"newconfig.js",
-            width: "80%"
+            customConfig:"newconfig.js"
         });
 
     </script>
