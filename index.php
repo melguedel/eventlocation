@@ -1,4 +1,4 @@
-<?php include "includes/editor.php"?>
+<!-- <?php include "includes/editor.php"?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -72,7 +72,7 @@
 
     <section class="about">
 
-    <p><?=$output?></p>
+    <!-- <p><?=$output?></p> -->
         <!-- <h2>About this location</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum fugiat praesentium culpa laboriosam voluptatibus corporis, voluptatem earum, nisi fuga illo natus porro nihil suscipit rerum quaerat aliquid nemo, voluptate blanditiis tempore sit eius? Architecto fuga optio fugiat at natus, nostrum, commodi non, temporibus atque quibusdam officia! Quasi earum expedita officiis sit. Vel necessitatibus expedita a fuga culpa in minus ipsum earum dolorum, harum sunt laborum porro doloremque officia libero non eius dolores accusamus, exercitationem dicta vero. Quia consectetur quasi explicabo sequi tempore, ex ab, ullam quis veritatis aperiam praesentium. Accusantium magni mollitia necessitatibus rerum quaerat cum amet ad, ipsum veritatis cumque, consequuntur ea? Quaerat ipsa facere aliquam tempore beatae laborum, aperiam minus animi possimus eos tenetur corrupti, nemo similique non sapiente saepe perferendis asperiores blanditiis, laudantium ullam quas ipsam magnam! Sapiente distinctio porro voluptas aliquam quo impedit incidunt nam praesentium reiciendis delectus accusamus dolorem nostrum consequatur temporibus facilis doloribus eligendi repellat repellendus, quasi asperiores non quam doloremque. Laboriosam delectus voluptatum possimus aperiam at consequatur cupiditate accusamus? Adipisci quos, saepe architecto neque quas iusto maxime maiores, odio corrupti quae doloremque ea officiis id laudantium distinctio reprehenderit vitae dolorem? Sit architecto molestias exercitationem? Esse quis officiis consequatur vero, exercitationem qui eum molestias?</p> -->
     </section>

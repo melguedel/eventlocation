@@ -1,9 +1,10 @@
 
 /* Header and Vertical Menu */
 
-h3 {
-    text-align: center;
-}
+  h2, h3 {
+      text-align: center;
+  }
+
 .vertical-menu {
     width: 200px;
     margin: 4em auto 4em 0;
@@ -40,4 +41,9 @@ h3 {
 
   p {
     margin-bottom: 2em;
+    text-align: center;
+  }
+
+  .fa-sign-out-alt {
+    font-size: 1rem;
   }

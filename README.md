@@ -13,7 +13,7 @@ The custom made CMS enables the admin of the website to edit text on the landing
 ° Home <br>
 ° Contact <br>
 ° Guestbook <br>
-° News? <br>
+° News <br>
 ° Login and Registration <br>
 ° Dashboard (only available trough Login) <br>
 
@@ -32,5 +32,24 @@ The custom made CMS enables the admin of the website to edit text on the landing
  ° Guestbook <br>
  ° News <br>
 
-<!-- <img src="images/Logo.png"> -->
+> Folder Content
+
+° CKEditor <br>
+° htaccess- File <br>
+° config.inc- File to access Database <br>
+° PHP- Files
+° CSS Folder
+° Javascript Folder
+° Images Folder
+° Includes Folder
+
+> Additional Information
+
+° To access the the dashboard, log in with: <br>
+<b>Username:</b> admin <br>
+<b>Password:</b> admin <br>
+
+° You can register as a new User and get access to the dashboard as well.<br>
+
+
 

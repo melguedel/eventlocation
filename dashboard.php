@@ -1,7 +1,34 @@
 <?php
 session_start();
-$_SESSION['status'] = "You are logged in!"
-// include_once('includes/config.inc.php');
+$_SESSION['status'] = "You are logged in!";
+
+//DB Verbindung
+include_once('includes/config.inc.php');
+
+// Dashboard PHP Code
+include_once('includes/dashboard.inc.php');
+
+// // Hole Daten des Beitrags aus DB
+// $query = "SELECT * FROM content WHERE `site_category` = 'home' ";
+// $resultat = mysqli_query($conn, $query);
+// if (mysqli_num_rows($resultat) > 0) {
+//     while ( $row = mysqli_fetch_assoc($resultat) ) {
+//         $dbTitle = $row['title'];
+//         $dbInhalt = $row['inhalt'];
+//         $dbId = $row['id'];
+//     }
+// } else {
+//     die("<div class=\"redError\">Could not find content</div>\n");
+// }
+// // var_dump($dbId);
+
+// // Variable mit Datenbank-Wert abgleichen
+// $title = $dbTitle;
+// $inhalt = $dbInhalt;
+// $id = $dbId;
+// $secondID = $dbId;
+
+
 ?>
 
 <!DOCTYPE html>
@@ -56,55 +83,116 @@ $_SESSION['status'] = "You are logged in!"
 
     <!-- Navbar -->
 
-    <?php include "includes/navbar.html"?>
+    <nav>
+    <div class="nav-wrapper grey darken-2">
+      <!-- <a href="#!" class="brand-logo"><img src="images/Logo.png" title="crystal lake logo" aria-hidden="true" alt="crystal lake logo"></a> -->
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="news.php">News</a></li>
+        <li><a href="contact.php">Contact</a></li>
+        <li><a href="guestbook.php">Guestbook</a></li>
+        <li><a href="login.php">Login</a></li>
+        
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="index.php">Home</a></li>
+    <li><a href="news.php">News</a></li>
+    <li><a href="contact.php">Contact</a></li>
+    <li><a href="guestbook.php">Guestbook</a></li>
+    <li><a href="login.php">Login</a></li>
+    <li><a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+  </ul>
 
 <!-- Vertical Side Navigation -->
 
 <h3>Welcome back!</h3>
+<p>Edit Landing Page and Contact</p>
 
-    <div class="vertical-menu">
+    <!-- <div class="vertical-menu">
         <a href="#">Edit Landing Page</a>
-        <a href="#">Edit Guestbook</a>
+        <a href="#">Edit Contact</a>
         <a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
-    </div>
+    </div> -->
 
 <!-- CK Editor  -->
-         
-<?php include "includes/editor.php"?>
+
 
 <!-- Editor und Speichern Button -->
 
 <section class="editText">
 
-        <p><?=$output?></p>
-        
+        <!-- Erster Abschnitt: About this location -->
+        <h5>Home content</h5>
         <form action="dashboard.php" method="POST">
-            <textarea name="inhalt" id="inhalt"><?=$output?></textarea>
+
+            <!-- Titel -->
+            <label for="title">Title</label>
+            <input type="text" name="title" value="<?=$title?>">
+            <!-- Textfeld -->
+            <textarea name="inhalt" id="inhalt"><?=$inhalt?></textarea>
+            
+            <!-- Submit Button -->
             <button type="submit" class="subBtn" name="save">Save Text</button>
+
+        </form>
+
+        <!-- Zweiter Abschnitt: Explore and enjoy -->
+        <form action="dashboard.php" method="POST">
+
+            <!-- Titel -->
+            <label for="title">Title</label>
+            <input type="text" name="title" value="<?=$secondTitle?>">
+            <!-- Textfeld -->
+            <textarea name="inhalt" id="inhalt"><?=$secondInhalt?></textarea>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="subBtn" name="speichern">Save Text</button>
+
         </form>
 
 </section>
 
+<!-- <?php
 
+// Wenn der Save Button gedrückt wurde, update den Text von "About this location" in der DB:
+if ( isset ($_POST['save']) ) {
 
-<?php
+    $title = strip_tags($_POST['title']);
+    $inhalt = strip_tags($_POST['inhalt']);
 
-// Wurde der Submit Button gedrückt?
-if ( isset($_POST['save']) ) {
-    // wenn ja:
-    schreibeContent("content.txt");
-    echo "<div class=\"new\">";
-    echo "Changes saved!";
-    echo "</div>\n";
+    if ( !empty($title) && !empty($inhalt) ) {
+        // Update Daten in DB
+        $sql = "UPDATE content SET title = '$title', inhalt ='$inhalt' WHERE id='$id'";
+        $result = mysqli_query($conn, $sql);
+        die("<div class=\"new\">Angaben gesichert</div>\n");
+    }
 }
 
+// Wenn der Save Button gedrückt wurde, update den Text von "Explore and enjoy" in der DB:
+if ( isset ($_POST['speichern']) ) {
 
-?>
+    $title = strip_tags($_POST['title']);
+    $inhalt = strip_tags($_POST['inhalt']);
+
+    if ( $title != '' ) {
+        // Update Daten in DB
+        $sql = "UPDATE content SET title = '$title', inhalt ='$inhalt' WHERE id='$secondID'";
+        $result = mysqli_query($conn, $sql);
+        die("<div class=\"new\">Angaben gesichert</div>\n");
+    }
+}
+
+?> -->
 
     <!-- Footer -->
 
     <?php include "includes/footer.html"?>
-
+    
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -116,13 +204,13 @@ if ( isset($_POST['save']) ) {
 
     <!-- JS Scripts -->
     <script src="js/code.js"></script>
-
-    <script>
+    <script src="//cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+    <script type="text/javascript">
 
         // CKEditor einfügen anstelle der Textarea
-        CKEDITOR.replace( 'inhalt', {
-            customConfig:"newconfig.js"
-        });
+        CKEDITOR.replace( 'inhalt');
+
+        // CKEDITOR.replace( 'abschnitt');
 
     </script>
 

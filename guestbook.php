@@ -1,3 +1,8 @@
+<?php
+    // DB Verbindung
+    include_once('includes/config.inc.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,9 +60,6 @@
 
     <?php
 
-    // DB Verbindung
-    include_once('includes/config.inc.php');
-
     // Variablen erstellen
     $errorMessage = "";
     $go = true;
@@ -103,9 +105,7 @@
             stringLaenge($username, "Username", 2);
             stringLaenge($message, "Message", 2);
     
-    
-           
-    
+
             // Sind die Eingaben richtig?
             if ( $go && isset($username) && isset($mail) && isset($message) ) {
                 // Kommentar erfolgreich gespeichert!

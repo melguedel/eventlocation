@@ -266,6 +266,12 @@ $_SESSION['status'] = "You are logged in!"
                 $_SESSION['username'] = $userdaten['username'];
                 $_SESSION['userid'] = $userID;
 
+                // if user_cat = admin 
+                // location: dashboard
+
+                // if user_cat = user
+                //location:index.php
+
                 // Umleitung auf Login-Seite
 	            header('Location: dashboard.php');
             }

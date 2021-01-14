@@ -12,3 +12,21 @@
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color: #d49a89;
 }
+
+/* Media Queries */
+
+@media screen and (min-width: 600px) {
+
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 980px) {
+
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+}
