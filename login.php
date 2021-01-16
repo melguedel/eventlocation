@@ -1,7 +1,8 @@
 <?php
 session_start();
 $_SESSION['status'] = "You are logged in!"
-// include_once('includes/config.inc.php');
+// Session starten bei Login
+
 ?>
 
 <!DOCTYPE html>
@@ -64,8 +65,9 @@ $_SESSION['status'] = "You are logged in!"
 
     <?php
 
-    require_once('includes/config.inc.php');
-
+    //DB Verbindung
+    include_once('includes/config.inc.php');
+    
     // Variablen erstellen
     $errorMessage = "";
     $go = true;

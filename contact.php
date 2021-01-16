@@ -1,3 +1,5 @@
+<?php include "includes/dashboard.inc.php"?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,8 +61,9 @@
 
             <section class="map">
 
-                <h4>Contact</h4>
-                <p>Do you have any questions? Please get in touch with us! Do you want to Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sapiente nam dolores perferendis, quo deserunt dicta veritatis totam atque nulla ea animi quam rerum expedita optio reprehenderit voluptate vero odit. </p>
+                <h4><?=$thirdTitle?></h4>
+                <p><?=$thirdInhalt?></p>
+                <!-- <p>Do you have any questions? Please get in touch with us! Do you want to Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sapiente nam dolores perferendis, quo deserunt dicta veritatis totam atque nulla ea animi quam rerum expedita optio reprehenderit voluptate vero odit. </p> -->
             
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2628.944028640874!2d-106.91516847707504!3d37.34646445330673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x873dde021b2c0659%3A0xfba98dedafe884ba!2sValhalla%20Pl%2C%20Colorado%2081147%2C%20USA!5e0!3m2!1sde!2sch!4v1607764003886!5m2!1sde!2sch" title="google map" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 

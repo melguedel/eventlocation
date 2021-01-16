@@ -1,6 +1,14 @@
 <?php
 session_start();
-$_SESSION['status'] = "You are logged in!";
+
+if (isset($_SESSION['status']) && $_SESSION['status'] == "You are logged in!") {
+    $output = "<p>Status: ".$_SESSION['status']."</p>\n";
+}
+else {
+    // Umleitung zurück auf Login, da Session nicht gelesen werden konnte
+    header ('Location: login.php');
+    echo "Cannot read Session-Status.</p>\n";
+}
 
 //DB Verbindung
 include_once('includes/config.inc.php');
@@ -128,12 +136,29 @@ include_once('includes/dashboard.inc.php');
             <label for="title">Title</label>
             <input type="text" name="title2" value="<?=$secondTitle?>">
             <!-- Textfeld -->
-            <textarea name="inhalt" id="inhalt2"><?=$secondInhalt?></textarea>
+            <textarea name="inhalt2" id="inhalt2"><?=$secondInhalt?></textarea>
             
             <!-- Submit Button -->
-            <button type="submit" class="subBtn" name="speichern">Save Text</button>
+            <button type="submit" class="subBtn" name="save2">Save Text</button>
 
         </form>
+
+        <!-- Dritter Abschnitt: Contact Text bearbeiten -->
+        <h5>Contact content</h5>
+        <form action="dashboard.php" method="POST">
+
+            <!-- Titel -->
+            <label for="title">Title</label>
+            <input type="text" name="title3" value="<?=$thirdTitle?>">
+            <!-- Textfeld -->
+            <textarea name="inhalt3" id="inhalt3"><?=$thirdInhalt?></textarea>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="subBtn" name="save3">Save Text</button>
+
+        </form>
+
+
 
 </section>
 
@@ -159,6 +184,8 @@ include_once('includes/dashboard.inc.php');
 
         // CKEditor einfügen anstelle der Textarea
         CKEDITOR.replace( 'inhalt');
+        CKEDITOR.replace( 'inhalt2');
+        CKEDITOR.replace( 'inhalt3');
 
         // CKEDITOR.replace( 'abschnitt');
 
