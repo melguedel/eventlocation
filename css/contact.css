@@ -1,13 +1,13 @@
 
+/* Contact Site general */
 
 .contact {
     display: flex;
     flex-direction: row;
     margin: 0 auto;
-    /* height: 120%; */
 }
 
-/* Section Contact and Map */
+/* Map */
 
 .map {
     display: flex;
@@ -30,7 +30,6 @@ iframe {
 
 /* Section Form */
 
-
 .address {
     display: flex;
     justify-content: center;
@@ -44,6 +43,8 @@ iframe {
     margin-bottom: 10em;
 }
 
+/* Button Styling */
+
 .subBtn {
     font-family: 'Poppins', sans-serif;
     border: solid 3px #d49a89;
@@ -52,8 +53,6 @@ iframe {
     cursor: pointer;
     margin-top: 1em;
 }
-
-/* Footer */
 
 
 /* Media Queries */
@@ -84,7 +83,6 @@ iframe {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /* height: 140vh; */
     }
 
     .subBtn {
@@ -101,7 +99,6 @@ iframe {
         display: flex;
         flex-direction: row;
         margin: 0 auto;
-        /* height: 160vh; */
     }
 
 }

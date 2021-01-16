@@ -1,6 +1,6 @@
 
 
-/* Login Section */
+/* Form and Button Styling  */
 
 #loginSection {
     margin: 3em;
@@ -49,8 +49,6 @@ input:focus {
     margin-top: 1em;
     width: 30%;
 }
-
-/* Footer */
 
 
 /* Media Queries */

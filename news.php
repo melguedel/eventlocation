@@ -76,7 +76,7 @@
                 <p>Grimes is a Canadian musician, singer, songwriter, record producer, music video director, and visual artist. Her music incorporates elements of varied styles and genres including dream pop, synth-pop, art pop, electronic, experimental pop, R&B, and hip hop.</p>
                 </div>
                 <div class="card-action">
-                <a href="https://www.ticketcorner.ch/" target="_blank" rel="noopener" class="subBtn">Buy Ticket</a>
+                <a href="https://www.ticketcorner.ch/" target="_blank" rel="noopener" class="subBtn">Tickets</a>
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@
                 <p>Gen-Z's next music icon is a Manila-born polymath with hair that cycles through kaleidoscopic shades - and he's about to hotwire today's pop landscape with his poignantly personal, genre-splicing songs.</p>
                 </div>
                 <div class="card-action">
-                <a href="https://www.ticketcorner.ch/" target="_blank" rel="noopener" class="subBtn">Buy Ticket</a>
+                <a href="https://www.ticketcorner.ch/" target="_blank" rel="noopener" class="subBtn">Tickets</a>
                 </div>
             </div>
         </div>
@@ -108,7 +108,7 @@
                 <p>Food lovers should not miss this festival! Good food is what life is all about, and summer is the best time of year for it. Barbecue, Vegan and Vegetarian cuisine awaits you.</p>
                 </div>
                 <div class="card-action">
-                <a href="https://www.ticketcorner.ch/" target="_blank" rel="noopener" class="subBtn">Buy Ticket</a>
+                <a href="https://www.ticketcorner.ch/" target="_blank" rel="noopener" class="subBtn">Tickets</a>
                 </div>
             </div>
         </div>
@@ -124,7 +124,7 @@
                 <p>Food lovers, gastronomes, and amateur cooks can find the best produce and specialties at the weekly markets. Professional chefs buy their products directly from the market and transform them into mouthwatering dishes.</p>
                 </div>
                 <div class="card-action">
-                <a href="https://www.ticketcorner.ch/" target="_blank" rel="noopener" class="subBtn">Buy Ticket</a>
+                <a href="https://www.ticketcorner.ch/" target="_blank" rel="noopener" class="subBtn">Tickets</a>
                 </div>
             </div>
         </div>

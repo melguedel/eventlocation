@@ -9,7 +9,6 @@
 
 html {
     scroll-behavior: smooth;
-    /* height: 100%; */
 }
 
 body {
@@ -24,18 +23,13 @@ h1, h2, h3, h4, h5, h6 {
     color: #d49a89;
 }
 
-/* Navbar */
-
-.brand-logo img {
-    margin: 0 auto;
-    max-width: 40px;
-}
+/* Navigationbar */
 
 nav ul a {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Header */
+/* Header with Parallax Container */
 
 .welcomeText {
     text-align: center;
@@ -44,7 +38,6 @@ nav ul a {
 
 .parallax-container {
     position: relative;
-    /* top: 10%; */
     width: 80%;
     margin: 0 auto;
     height: 400px;
@@ -59,7 +52,7 @@ nav ul a {
     width: 90%;
 }
 
-/* Section Boxes */
+/* Section with Hover-Imageboxes */
 
 .boxes {
     display: flex;
@@ -111,7 +104,7 @@ nav ul a {
     opacity:1;
 }
 
-/* Section Gallery */
+/* Gallery Section with Slider */
 
 .slider .indicators .indicator-item {
     background-color: #d49a89;
@@ -127,7 +120,7 @@ nav ul a {
     max-width: 900px;
     margin: 0 auto;
     z-index: -2;
-    margin-bottom: 10em;
+    margin-bottom: 4em;
   }
 
   .slider .indicators {
@@ -135,12 +128,9 @@ nav ul a {
     z-index: 100;
   }
 
-/* Form */
-
-/* Login Section */
+/* Forms for registering and login on Login Site */
 
 #loginSection {
-    /* margin: 3em; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -182,16 +172,17 @@ input:focus {
     margin-top: 1em;
 }
 
-  .subBtn {
+/* Button Styling */
+
+.subBtn {
     font-family: 'Poppins', sans-serif;
     border: solid 3px #d49a89;
     color: #d49a89;
     padding: 0.5em;
     cursor: pointer;
-    /* margin-top: 1em; */
 }
 
-/* Error & Success Messages */
+/* Error & Success Messages from Forms */
 
 .redError {
     color: darkred;
@@ -209,7 +200,7 @@ input:focus {
     border-radius: 5px;
 }
 
-/* User Comment */
+/* User Comment on Guestbook Site */
 
 .userComment {
     width: 80%;
@@ -260,11 +251,6 @@ footer {
     list-style: none;
     font-family: 'Poppins', sans-serif;
 }
-
-/* .privacyPolicy:hover {
-    color: white;
-    text-decoration: none;
-} */
 
 .to-top-btn {
     display: flex;

@@ -32,24 +32,22 @@ The custom made CMS enables the admin of the website to edit text on the landing
  ° Guestbook <br>
  ° News <br>
 
-> Folder Content
+> Folder Structure includes:
 
 ° CKEditor <br>
 ° htaccess- File <br>
-° config.inc- File to access Database <br>
-° PHP- Files
-° CSS Folder
-° Javascript Folder
-° Images Folder
-° Includes Folder
+° PHP- Files <br>
+° CSS Folder with all CSS Files<br>
+° Javascript Folder with Script<br>
+° Images Folder containing all images<br>
+° Includes Folder, with <b>config.inc- File</b> to access Database<br>
 
 > Additional Information
 
-° To access the the dashboard, log in with: <br>
+To access the the dashboard, log in with: <br>
 <b>Username:</b> admin <br>
 <b>Password:</b> admin <br>
-
-° You can register as a new User and get access to the dashboard as well.<br>
+You can register as a new User and get access to the dashboard as well.<br>
 
 
 

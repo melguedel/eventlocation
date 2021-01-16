@@ -19,7 +19,15 @@
 
     .row {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .subBtn {
+        width: 150px;
     }
 }
 
