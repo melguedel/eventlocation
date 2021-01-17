@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['status'] = "You are logged in!"
+$_SESSION['status'] = "You are logged in!";
 // Session starten bei Login
 
 ?>
@@ -27,12 +27,9 @@ $_SESSION['status'] = "You are logged in!"
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
-    <!-- <link rel="manifest" href="/manifest.json"> -->
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
-    
 
     <!-- Materialize CSS Stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -133,16 +130,7 @@ $_SESSION['status'] = "You are logged in!"
             $sql = "INSERT INTO `users` (`gender`, `user`, `mail`, `password`) VALUES ('$gender', '$usernameValue', '$emailValue', '$hashPass')";
             $result = mysqli_query($conn, $sql);
 
-            // Email senden an
-            $to = "straying.star@gmx.ch";
-            // $to = $emailValue;
-            $emailBody = "";
-
-            $emailBody .= "From: ". $usernameValue. "\r\n";
-            $emailBody .= "Email: ". $emailValue. "\r\n";
-            $emailBody .= "You are now registered at Crystal Lake Events!";
-
-            // Anzeigen
+            // Registration wurde gemacht!
             echo "<div class=\"new\">";
             echo "New registration is done!";
             echo "</div>\n";
@@ -327,16 +315,12 @@ $_SESSION['status'] = "You are logged in!"
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- GSAP -->
-
-
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!-- JS Scripts -->
     <script src="js/code.js"></script>
  
-    
     
 </body>
 </html>

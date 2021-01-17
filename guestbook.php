@@ -25,7 +25,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
-    <!-- <link rel="manifest" href="/manifest.json"> -->
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -113,7 +112,7 @@
                 echo "Saved your comment!";
                 echo "</div>\n";
                 
-                 // In DB speichern
+            // In DB speichern
             $sql = "INSERT INTO `guestbook` (`username`, `email`, `message`) VALUES ('$username', '$mail', '$message')";
             $result = mysqli_query($conn, $sql);
             
@@ -175,10 +174,6 @@
                 echo "<div class=\"userComment\">";
                 echo "<b>Username:</b> ".$row['username']."<br>"." <b>Message:</b> ".$row['message']."<br>";
                 echo "</div>\n";
-                // } else {
-            //     echo "<div class=\"redError\">";
-            //     echo "No posts were found.";
-            //     echo "</div>\n";
             }
         };
 
@@ -186,8 +181,7 @@
     // DB schliessen
     mysqli_close($conn);       
 
-
-    ?>
+?>
 
     
     <!-- Footer -->
@@ -196,9 +190,6 @@
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- GSAP -->
-
 
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

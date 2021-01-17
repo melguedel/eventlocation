@@ -1,26 +1,8 @@
 
-/* Header and Vertical Menu */
+/* Header */
 
   h2, h3 {
       text-align: center;
-  }
-
-.vertical-menu {
-    width: 200px;
-    margin: 4em auto 4em 0;
-  }
-  
-  .vertical-menu a {
-    font-family: 'Poppins', sans-serif;
-    background-color: #616161;
-    color: white;
-    display: block;
-    padding: 0.9em;
-    text-decoration: none;
-  }
-  
-  .vertical-menu a:hover {
-    background-color: #424242;
   }
 
   /* Textarea */

@@ -41,7 +41,6 @@ include_once('includes/dashboard.inc.php');
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
-    <!-- <link rel="manifest" href="/manifest.json"> -->
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -73,7 +72,6 @@ include_once('includes/dashboard.inc.php');
 
     <nav>
     <div class="nav-wrapper grey darken-2">
-      <!-- <a href="#!" class="brand-logo"><img src="images/Logo.png" title="crystal lake logo" aria-hidden="true" alt="crystal lake logo"></a> -->
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
@@ -100,15 +98,6 @@ include_once('includes/dashboard.inc.php');
 
 <h3>Welcome back!</h3>
 <p>Edit Landing Page and Contact</p>
-
-    <!-- <div class="vertical-menu">
-        <a href="#">Edit Landing Page</a>
-        <a href="#">Edit Contact</a>
-        <a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
-    </div> -->
-
-<!-- CK Editor  -->
-
 
 <!-- Editor und Speichern Button -->
 
@@ -158,11 +147,7 @@ include_once('includes/dashboard.inc.php');
 
         </form>
 
-
-
 </section>
-
-
 
     <!-- Footer -->
 
@@ -170,9 +155,6 @@ include_once('includes/dashboard.inc.php');
     
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- GSAP -->
-
 
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
