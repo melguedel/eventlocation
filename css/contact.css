@@ -28,7 +28,7 @@ iframe {
     margin: 0 auto;
 }
 
-/* Section Form */
+/* Section Newsletter Form */
 
 .address {
     display: flex;
@@ -38,10 +38,14 @@ iframe {
     width: 50%;
 }
 
-.newsletter {
-    margin-top: 3em;
-    margin-bottom: 10em;
+.anschrift {
+    margin-bottom: 2em;
 }
+
+/* .newsletter {
+    margin-top: 3em;
+    margin-bottom: 5em;
+} */
 
 /* Button Styling */
 
