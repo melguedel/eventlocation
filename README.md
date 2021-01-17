@@ -14,7 +14,7 @@ The custom made CMS enables the registered and logged in User of the website to 
 ° Contact <br>
 ° Guestbook <br>
 ° News <br>
-° Login and Registration <br>
+° Login and Registration Forms <br>
 ° Dashboard (only available trough Login) <br>
 
  > Requirements
