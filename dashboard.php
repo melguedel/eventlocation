@@ -187,8 +187,6 @@ include_once('includes/dashboard.inc.php');
         CKEDITOR.replace( 'inhalt2');
         CKEDITOR.replace( 'inhalt3');
 
-        // CKEDITOR.replace( 'abschnitt');
-
     </script>
 
 </body>

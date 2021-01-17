@@ -15,7 +15,7 @@ if (mysqli_num_rows($resultat) > 0) {
     while ( $row = mysqli_fetch_assoc($resultat) ) {
         $dbTitle = $row['title'];
         $dbInhalt = $row['inhalt'];
-        $dbId = $row['id'];
+        // $dbId = $row['id'];
     }
 } else {
     die("<div class=\"redError\">Could not find content</div>\n");
@@ -25,7 +25,8 @@ if (mysqli_num_rows($resultat) > 0) {
 // Variable mit Datenbank-Wert abgleichen
 $title = $dbTitle;
 $inhalt = $dbInhalt;
-$id = $dbId;
+// $id = $dbId;
+
 
 
 // Wenn der Save Button gedrückt wurde, update den Text von "About this location" in der DB:
@@ -38,9 +39,25 @@ if ( isset ($_POST['save']) ) {
         // Update Daten in DB
         $sql = "UPDATE content SET title = '$title', inhalt ='$inhalt' WHERE id='2'";
         $result = mysqli_query($conn, $sql);
-        die("<div class=\"new\">Angaben gesichert</div>\n");
+        echo("<div class=\"new\">Changes saved!</div>\n");
     }
 }
+
+// Hole Daten des Beitrags aus DB der Kategorie "Explore"
+$query2 = "SELECT * FROM content WHERE `site_category` = 'explore' ";
+$resultat2 = mysqli_query($conn, $query2);
+if (mysqli_num_rows($resultat2) > 0) {
+    while ( $row = mysqli_fetch_assoc($resultat2) ) {
+        $dbTitle2 = $row['title'];
+        $dbInhalt2 = $row['inhalt'];
+        // $dbId2 = $row['id'];
+    }
+} else {
+    die("<div class=\"redError\">Could not find content</div>\n");
+}
+
+$secondTitle = $dbTitle2;
+$secondInhalt = $dbInhalt2;
 
 // Wenn der Save Button gedrückt wurde, update den Text von "Explore and enjoy" in der DB:
 if ( isset ($_POST['save2']) ) {
@@ -50,9 +67,9 @@ if ( isset ($_POST['save2']) ) {
 
     if ( !empty($secondTitle) && !empty($secondInhalt) ) {
         // Update Daten in DB
-        $sql = "UPDATE content SET title = '$secondTitle', inhalt ='$secondInhalt' WHERE id='1'";
-        $result = mysqli_query($conn, $sql);
-        die("<div class=\"new\">Angaben gesichert</div>\n");
+        $sql2 = "UPDATE content SET title = '$secondTitle', inhalt ='$secondInhalt' WHERE id='1'";
+        $result2 = mysqli_query($conn, $sql2);
+        echo("<div class=\"new\">Changes saved!</div>\n");
     }
 }
 
@@ -61,10 +78,10 @@ if ( isset ($_POST['save2']) ) {
 
 
 // Hole Daten des Beitrags aus DB der Kategorie "contact"
-$query2 = "SELECT * FROM content WHERE `site_category` = 'contact' ";
-$resultat2 = mysqli_query($conn, $query2);
-if (mysqli_num_rows($resultat2) > 0) {
-    while ( $row = mysqli_fetch_assoc($resultat2) ) {
+$query3 = "SELECT * FROM content WHERE `site_category` = 'contact' ";
+$resultat3 = mysqli_query($conn, $query3);
+if (mysqli_num_rows($resultat3) > 0) {
+    while ( $row = mysqli_fetch_assoc($resultat3) ) {
         $dbTitle3 = $row['title'];
         $dbInhalt3 = $row['inhalt'];
     }
@@ -83,9 +100,9 @@ if ( isset ($_POST['save3']) ) {
 
     if ( !empty($thirdTitle) && !empty($thirdInhalt) ) {
         // Update Daten in DB
-        $sql2 = "UPDATE content SET title = '$thirdTitle', inhalt ='$thirdInhalt' WHERE id='3'";
-        $result2 = mysqli_query($conn, $sql2);
-        die("<div class=\"new\">Angaben gesichert</div>\n");
+        $sql3 = "UPDATE content SET title = '$thirdTitle', inhalt ='$thirdInhalt' WHERE id='3'";
+        $result3 = mysqli_query($conn, $sql3);
+        echo("<div class=\"new\">Changes saved!</div>\n");
     }
 }
 

@@ -144,7 +144,7 @@ $_SESSION['status'] = "You are logged in!"
 
             // Anzeigen
             echo "<div class=\"new\">";
-            echo "New registration is done! Email sent";
+            echo "New registration is done!";
             echo "</div>\n";
         } 
         else {
@@ -262,7 +262,7 @@ $_SESSION['status'] = "You are logged in!"
                 // execute führt das statement aus
                 mysqli_stmt_execute($statement);
                 $resultat = mysqli_stmt_get_result($statement);
-                // $getData = mysqli_fetch_assoc($resultat);
+                
                 
                 // Session ID erstellen
                 $_SESSION['username'] = $userdaten['username'];
