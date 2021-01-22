@@ -55,56 +55,55 @@
 
     <?php include "includes/navbar.html"?>
 
-    <!-- Guestbook Form -->
 
     <?php
 
-    // Variablen erstellen
-    $errorMessage = "";
-    $go = true;
+        // Variablen erstellen
+        $errorMessage = "";
+        $go = true;
 
-    // Funktion um alle Sonderzeichen, Leerschläge und Tags entfernen
-    function killGerms($str){
-        $str = trim($str);
-        $str = strip_tags($str);
-        $str = htmlspecialchars($str); 
-        return $str;
-    }
-
-    // Funktion um Länge der Eingabe zu validieren
-    function stringLaenge ($str, $feld, $min) {
-        global $errorMessage;
-        global $go;
-
-        // Anzahl der Zeichen checken
-        $laengeZeichen = strlen($str);
-        if ( $laengeZeichen < $min ) {
-            $errorMessage .= "Input in ".$feld." too short! Must at least be ".$min." characters.<br>";
-            $go = false;
-        } elseif ( empty($_POST['mail']) ) {
-            $errorMessage .= "You did not enter an email address.<br>";
-            $go = false;
-        } elseif ( empty($_POST['message']) ) {
-            $errorMessage .= "You did not enter a message.<br>";
-            $go = false;
+        // Funktion um alle Sonderzeichen, Leerschläge und Tags entfernen
+        function killGerms($str){
+            $str = trim($str);
+            $str = strip_tags($str);
+            $str = htmlspecialchars($str); 
+            return $str;
         }
-    }
+
+        // Funktion um Länge der Eingabe zu validieren
+        function stringLaenge ($str, $feld, $min) {
+            global $errorMessage;
+            global $go;
+            
+            // Anzahl der Zeichen checken
+            $laengeZeichen = strlen($str);
+            if ( $laengeZeichen < $min ) {
+                $errorMessage .= "Input in ".$feld." too short! Must at least be ".$min." characters.<br>";
+                $go = false;
+            } elseif ( empty($_POST['mail']) ) {
+                $errorMessage .= "You did not enter an email address.<br>";
+                $go = false;
+            } elseif ( empty($_POST['message']) ) {
+                $errorMessage .= "You did not enter a message.<br>";
+                $go = false;
+            }
+        }
 
         // Button gedrückt?
         if ( isset($_POST['comment']) ) {
-
+            
             // "Desinfektion" der Eingaben
             // Variablen definieren und Tags aus Input entfernen
             $username = killGerms($_POST['username'], FILTER_SANITIZE_STRING);
             $mail = killGerms($_POST['mail'], FILTER_SANITIZE_EMAIL);
             $message = killGerms($_POST['message'], FILTER_SANITIZE_STRING);
             
-    
+            
             // Länge der Eingabe validieren
             stringLaenge($username, "Username", 2);
             stringLaenge($message, "Message", 2);
-    
-
+            
+            
             // Sind die Eingaben richtig?
             if ( $go && isset($username) && isset($mail) && isset($message) ) {
                 // Kommentar erfolgreich gespeichert!
@@ -112,10 +111,10 @@
                 echo "Saved your comment!";
                 echo "</div>\n";
                 
-            // In DB speichern
-            $sql = "INSERT INTO `guestbook` (`username`, `email`, `message`) VALUES ('$username', '$mail', '$message')";
-            $result = mysqli_query($conn, $sql);
-            
+                // In DB speichern
+                $sql = "INSERT INTO `guestbook` (`username`, `email`, `message`) VALUES ('$username', '$mail', '$message')";
+                $result = mysqli_query($conn, $sql);
+                
             } 
             else {
                 // Angaben falsch
@@ -123,9 +122,8 @@
                 echo $errorMessage;
                 echo "</div>\n";
             }
-    
         }
-        
+
         else {
             // Falls noch nichts eingegeben wurde, alles auf leer setzen
             $username = "";
@@ -135,6 +133,8 @@
 
 
     ?>
+
+<!-- Guestbook Form -->
 
     <form action="guestbook.php" class="guestform" method="POST">
 
@@ -181,7 +181,7 @@
     // DB schliessen
     mysqli_close($conn);       
 
-?>
+    ?>
 
     
     <!-- Footer -->

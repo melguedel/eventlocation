@@ -13,9 +13,9 @@ The custom made CMS enables the registered and logged in User of the website to 
 ° Home <br>
 ° Contact <br>
 ° Guestbook <br>
-° News <br>
+° News with Cards<br>
 ° Login and Registration Forms <br>
-° Dashboard (only available trough Login) <br>
+° Dashboard (only available trough Login) with CKEditor<br>
 
  > Requirements
 
@@ -29,18 +29,18 @@ The custom made CMS enables the registered and logged in User of the website to 
 
  > Optional
 
- ° Guestbook <br>
+ ° Guestbook, where users are able to leave comments <br>
  ° News <br>
 
 > Folder Structure includes:
 
-° CKEditor <br>
+° CKEditor Folder <br>
 ° htaccess- File <br>
 ° PHP- Files <br>
 ° CSS Folder with all CSS Files<br>
 ° Javascript Folder with Script<br>
 ° Images Folder containing all images of the project including Favicons and Logo<br>
-° Includes Folder, with <b>config.inc</b>- File to access Database<br>
+° Includes Folder, with <b>config.inc.php</b>- File to access Database<br>
 ° README.md- File<br>
 ° Exported Database-Files for MySQL<br>
 
@@ -50,6 +50,13 @@ To access the dashboard, log in with: <br>
 <b>Username:</b> admin <br>
 <b>Password:</b> admin <br>
 You can register as a new User and get access to the dashboard as well.<br>
+
+> Projects includes:
+
+° Materialize CSS Framework <br>
+° CK Editor <br>
+° PHP & MySQL <br>
+° jQuery
 
 
 

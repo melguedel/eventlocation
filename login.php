@@ -58,7 +58,7 @@ $_SESSION['status'] = "You are logged in!";
     <?php include "includes/navbar.html"?>
 
 
-    <!-- Login or Registration -->
+    <!-- Registration -->
 
     <?php
 
@@ -91,9 +91,11 @@ $_SESSION['status'] = "You are logged in!";
             $errorMessage .= "Input in ".$feld." too long! Must be maximum ".$max." characters.<br>";
             $go = false;
         } elseif ( empty($_POST['agb']) ) {
+            // AGB Checkbox wurde nicht angeklickt
             $errorMessage .= "You did not accept the terms and conditions.<br>";
             $go = false;
         } elseif ( empty($_POST['email']) ) {
+            // Email wurde nicht eingegeben
             $errorMessage .= "You did not enter an email address.<br>";
             $go = false;
         }
@@ -214,7 +216,8 @@ $_SESSION['status'] = "You are logged in!";
 
                     </form>
 
-
+    <!-- Login -->
+    
     <?php
 
     // Notices ausschalten
@@ -251,11 +254,12 @@ $_SESSION['status'] = "You are logged in!";
                 mysqli_stmt_execute($statement);
                 $resultat = mysqli_stmt_get_result($statement);
                 
-                
-                // Session ID erstellen
-                $_SESSION['username'] = $userdaten['username'];
-                $_SESSION['userid'] = $userID;
-
+                // Admin oder User?
+                // if($user['username'] == 'admin') {
+                //     header('Location: dashboard.php');
+                // } else {
+                //     header('Location: login.php');
+                // }
                 // if user_cat = admin 
                 // location: dashboard
 

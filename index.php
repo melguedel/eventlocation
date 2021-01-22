@@ -67,7 +67,7 @@
     </div>
 
 
-    <!-- Section About -->
+    <!-- Section About (mit Editor bearbeitbar) -->
 
     <section class="about">
 
@@ -96,7 +96,7 @@
     </section>
 
 
-    <!-- Section more -->
+    <!-- Section more Text (mit Editor bearbeitbar) -->
 
     <section class="more">
 
@@ -106,7 +106,7 @@
     </section>
     
 
-    <!-- Section Gallery -->
+    <!-- Section Bild Slider Gallery -->
     
     <div class="slider">
     <ul class="slides">

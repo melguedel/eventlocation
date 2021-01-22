@@ -1,11 +1,8 @@
 <?php
 session_start();
-session_destroy();
+
 // Session beenden und zurückkehren zu Login
+session_destroy();
 header("Location: login.php");
 
-// Anzeige für User: erfolgreiches Logout
-echo "<div class=\"new\">";
-echo "Logout successfull!";
-echo "</div>\n";
 ?>

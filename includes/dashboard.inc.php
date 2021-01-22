@@ -15,18 +15,15 @@ if (mysqli_num_rows($resultat) > 0) {
     while ( $row = mysqli_fetch_assoc($resultat) ) {
         $dbTitle = $row['title'];
         $dbInhalt = $row['inhalt'];
-        // $dbId = $row['id'];
     }
 } else {
     die("<div class=\"redError\">Could not find content</div>\n");
 }
-// var_dump($dbId);
+// var_dump($dbTitle);
 
 // Variable mit Datenbank-Wert abgleichen
 $title = $dbTitle;
 $inhalt = $dbInhalt;
-// $id = $dbId;
-
 
 
 // Wenn der Save Button gedrückt wurde, update den Text von "About this location" in der DB:
@@ -50,7 +47,6 @@ if (mysqli_num_rows($resultat2) > 0) {
     while ( $row = mysqli_fetch_assoc($resultat2) ) {
         $dbTitle2 = $row['title'];
         $dbInhalt2 = $row['inhalt'];
-        // $dbId2 = $row['id'];
     }
 } else {
     die("<div class=\"redError\">Could not find content</div>\n");

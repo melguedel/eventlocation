@@ -52,11 +52,11 @@
 
     <?php include "includes/navbar.html"?>
 
-    <!-- Contact Columns -->
+    <!-- Kontaktdaten und Map Section -->
 
     <section class="contact">
 
-        <!-- Section Contact and Map -->
+        <!-- Section Contact (mit Editor bearbeitbar) -->
 
             <section class="map">
 
@@ -67,7 +67,7 @@
 
             </section>
 
-            <!-- Section Form -->
+            <!-- Section Anschrift -->
 
             <section class="address">
 
