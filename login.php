@@ -255,19 +255,16 @@ $_SESSION['status'] = "You are logged in!";
                 $resultat = mysqli_stmt_get_result($statement);
                 
                 // Admin oder User?
-                // if($user['username'] == 'admin') {
-                //     header('Location: dashboard.php');
-                // } else {
-                //     header('Location: login.php');
-                // }
-                // if user_cat = admin 
-                // location: dashboard
-
-                // if user_cat = user
-                //location:index.php
-
+                if($row['user'] == 'admin') {
+                    // Falls es Admin ist, dann weiterleiten auf Dashboard
+                    header('Location: dashboard.php');
+                } else {
+                    // Falls es ein User ist, dann weiterleiten auf Login
+                    header('Location: login.php');
+                }
+               
                 // Umleitung auf Login-Seite
-	            header('Location: dashboard.php');
+	            // header('Location: dashboard.php');
             }
             else {
             // Falsches Passwort
