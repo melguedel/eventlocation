@@ -100,7 +100,7 @@
             
             
             // Länge der Eingabe validieren
-            stringLaenge($username, "Username", 2);
+            stringLaenge($username, "Name", 2);
             stringLaenge($message, "Message", 2);
             
             
@@ -141,7 +141,7 @@
         <h2>Share your thoughts!</h2>
         <p class="regInfo">about concerts, festivals and more.</p>
 
-        <label for="username">Username<input type="text" name="username" value="<?=$username?>"></label>
+        <label for="username">Name<input type="text" name="username" value="<?=$username?>"></label>
 
         <label for="email">Email<input type="text" name="mail" value="<?=$mail?>"></label>
 
@@ -150,7 +150,7 @@
             <div class="row">
                 <div class="input-field col s12">
                 <textarea id="textarea1" class="materialize-textarea" name="message"><?=$message?></textarea>
-                <label for="textarea1">Textarea</label>
+                <label for="textarea1">Message</label>
                 </div>
             </div>
 

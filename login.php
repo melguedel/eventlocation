@@ -239,7 +239,7 @@ $_SESSION['status'] = "You are logged in!";
         // Ist Passwort korrekt?
         if ($numRows == 1) {
             $row = mysqli_fetch_assoc($rs);
-            // var_dum p($row['password']);
+            // var_dump($row['password']);
             if (password_verify($pass, $row['password'])) {
                 // Eingabe richtig!
 
@@ -263,8 +263,6 @@ $_SESSION['status'] = "You are logged in!";
                     header('Location: login.php');
                 }
                
-                // Umleitung auf Login-Seite
-	            // header('Location: dashboard.php');
             }
             else {
             // Falsches Passwort

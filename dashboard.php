@@ -74,21 +74,11 @@ include_once('includes/dashboard.inc.php');
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-        <!-- <li><a href="index.php">Home</a></li> -->
-        <!-- <li><a href="news.php">News</a></li> -->
-        <!-- <li><a href="contact.php">Contact</a></li> -->
-        <!-- <li><a href="guestbook.php">Guestbook</a></li> -->
-        <!-- <li><a href="login.php">Login</a></li> -->
-      </ul>
+        </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <!-- <li><a href="index.php">Home</a></li> -->
-    <!-- <li><a href="news.php">News</a></li> -->
-    <!-- <li><a href="contact.php">Contact</a></li> -->
-    <!-- <li><a href="guestbook.php">Guestbook</a></li> -->
-    <!-- <li><a href="login.php">Login</a></li> -->
     <li><a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
   </ul>
 
@@ -96,7 +86,9 @@ include_once('includes/dashboard.inc.php');
 
 <h3>Welcome back!</h3>
 <p>Edit Landing Page and Contact</p>
-<?=$output?>
+
+<!-- Status of Session -->
+<!-- <?=$output?> -->
 
 <!-- CKEditors und Speichern Button -->
 
