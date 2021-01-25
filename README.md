@@ -6,7 +6,8 @@ CONTENTS OF THIS PROJECT
 Module WBD 5100 <br>
 Project custom made Content Management System January 2021. 
 The project is about an event location where concerts, different kinds of festivals and other parties are held. The location is also available for private parties like weddings. This project is inspired by <a href="https://www.schloss-liebegg.ch/">Schloss Liebegg</a>. <br>
-The custom made CMS enables the registered and logged in User of the website to edit text on the landing page and the contact site.
+The custom made CMS enables the administrator of the website to edit text on the landing page and the contact site.
+Users and Visitors are able to leave a comment after they filled in a form on the guestbook page.
 
  > Site Contents
 
@@ -29,7 +30,7 @@ The custom made CMS enables the registered and logged in User of the website to 
 
  > Optional
 
- ° Guestbook, where users are able to leave comments <br>
+ ° Guestbook <br>
  ° News <br>
 
 > Folder Structure includes:
@@ -49,7 +50,6 @@ The custom made CMS enables the registered and logged in User of the website to 
 To access the dashboard, log in with: <br>
 <b>Username:</b> admin <br>
 <b>Password:</b> admin <br>
-You can register as a new User and get access to the dashboard as well.<br>
 
 > Projects includes:
 
